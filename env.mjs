@@ -4,11 +4,11 @@ import { z } from 'zod';
 export const env = createEnv({
   server: {
     // Database
-    DATABASE_URL: z.string().min(1),
-    DIRECT_URL: z.string().min(1),
+    DATABASE_URL: z.string().min(1).optional(),
+    DIRECT_URL: z.string().min(1).optional(),
   },
   client: {
-    NEXT_PUBLIC_APP_URL: z.string().min(1),
+    NEXT_PUBLIC_APP_URL: z.string().min(1).optional(),
   },
   runtimeEnv: {
     // Database
