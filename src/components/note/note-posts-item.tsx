@@ -28,7 +28,7 @@ export function NoteItem({
         <div className="w-full overflow-hidden rounded-xl border">
           <BlurImage
             alt={data.title}
-            blurDataURL={data.coverImage ?? undefined}
+            blurDataURL={data.coverImage ?? `/_img/img1.png`}
             className={cn(
               'w-full object-cover object-center rounded-3xl',
               horizontale ? 'lg:h-70' : 'h-60'
@@ -37,7 +37,7 @@ export function NoteItem({
             height={400}
             priority={priority}
             placeholder="blur"
-            src={data.coverImage || ''}
+            src={data.coverImage ?? `/_img/img1.png`}
             sizes="(max-width: 768px) 750px, 600px"
           />
         </div>
@@ -63,7 +63,7 @@ export function NoteItem({
             <NoteAuthor
               username={data.title}
               key={data.id}
-              image={data.coverImage ?? undefined}
+              image={data.coverImage ?? ``}
               imageOnly
             />
             {data.createdAt && (

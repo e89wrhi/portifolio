@@ -16,13 +16,13 @@ export default function NoteAuthor({
 
   return imageOnly ? (
     <BlurImage
-      src={image}
+      src={image ?? `/_img/img1.png`}
       alt={username}
       width={32}
       height={32}
       priority
       placeholder="blur"
-      blurDataURL={blurDataURL}
+      blurDataURL={blurDataURL ?? `/_img/img1.png`}
       className="size-8 rounded-full transition-all group-hover:brightness-90"
     />
   ) : (
@@ -33,13 +33,13 @@ export default function NoteAuthor({
       rel="noopener noreferrer"
     >
       <BlurImage
-        src={image}
+        src={image ?? `/_img/img1.png`}
         alt={username}
         width={40}
         height={40}
         priority
         placeholder="blur"
-        blurDataURL={blurDataURL}
+        blurDataURL={blurDataURL ?? `/_img/img1.png`}
         className="size-8 rounded-full transition-all group-hover:brightness-90 md:size-10"
       />
       <div className="flex flex-col -space-y-0.5">

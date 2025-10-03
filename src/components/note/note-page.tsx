@@ -46,12 +46,12 @@ export default async function NotePage({ post }: NotePageProps) {
       {post.coverImage && (
         <div className="mt-6 w-full overflow-hidden rounded-xl border">
           <BlurImage
-            src={post.coverImage}
+            src={post.coverImage ?? `/_img/img1.png`}
             alt={post.title}
             width={1200}
             height={630}
             placeholder="blur"
-            blurDataURL={post.coverImage}
+            blurDataURL={post.coverImage ?? `/_img/img1.png`}
             className="aspect-[1200/630] object-cover md:rounded-xl"
             priority
           />
