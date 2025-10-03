@@ -10,26 +10,15 @@ import NotePostsLoading from './note-posts-loading';
 import { NotesHeader } from './note-posts-header';
 
 interface WrapperProps {
-  initialPosts: NotePost[];
+  initialPosts: BlogPost[];
   initialQuery?: string;
 }
-
-type NotePost = Omit<BlogPost, 'coverImageId' | 'authorId'> & {
-  blurDataURL: string | null;
-  coverImageUrl: string | null;
-  author?: {
-    id: string;
-    name: string;
-    bio: string | null;
-    avatarUrl: string | null;
-  } | null;
-};
 
 export default function NotePostsWrapper({
   initialPosts,
   initialQuery = '',
 }: WrapperProps) {
-  const [posts, setPosts] = useState<NotePost[]>(initialPosts);
+  const [posts, setPosts] = useState<BlogPost[]>(initialPosts);
   // eslint-disable-next-line @typescript-eslint/no-unused-vars
   const [query, setQuery] = useState(initialQuery);
   const [loading, setLoading] = useState(false);
@@ -49,7 +38,7 @@ export default function NotePostsWrapper({
         const res = await fetch(`/api/posts?${params.toString()}`);
         if (!res.ok) throw new Error(`Error ${res.status}: ${res.statusText}`);
 
-        const data: NotePost[] = await res.json();
+        const data: BlogPost[] = await res.json();
         setPosts(data || []);
 
         router.replace(`/note?q=${query.trim()}`);

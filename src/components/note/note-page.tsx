@@ -4,18 +4,7 @@ import BlurImage from '@/components/shared/blur-image';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import Author from '@/components/note/note-posts-item-author';
 import { cn, formatDate } from '@/lib/utils';
-
-interface BlogPost {
-  id: string;
-  title: string;
-  slug: string;
-  excerpt: string;
-  content: string; // Markdown or plain text
-  coverImage?: { url: string } | null;
-  author: { id: string; name: string };
-  tags: string[];
-  createdAt: Date;
-}
+import { BlogPost } from '@prisma/client';
 
 interface NotePageProps {
   post: BlogPost;
@@ -50,19 +39,19 @@ export default async function NotePage({ post }: NotePageProps) {
         </p>
 
         <div className="flex flex-nowrap items-center space-x-5 pt-1 md:space-x-8">
-          <Author username={post.author.id} />
+          <Author username={post.id} />
         </div>
       </div>
 
-      {post.coverImage?.url && (
+      {post.coverImage && (
         <div className="mt-6 w-full overflow-hidden rounded-xl border">
           <BlurImage
-            src={post.coverImage.url}
+            src={post.coverImage}
             alt={post.title}
             width={1200}
             height={630}
             placeholder="blur"
-            blurDataURL={post.coverImage.url}
+            blurDataURL={post.coverImage}
             className="aspect-[1200/630] object-cover md:rounded-xl"
             priority
           />

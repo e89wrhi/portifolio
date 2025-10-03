@@ -4,23 +4,12 @@ import BlurImage from '@/components/shared/blur-image';
 import { BlogPost } from '@prisma/client';
 import NoteAuthor from './note-posts-item-author';
 
-type NotePost = Omit<BlogPost, 'coverImageId' | 'authorId'> & {
-  blurDataURL: string | null;
-  coverImageUrl: string | null;
-  author?: {
-    id: string;
-    name: string;
-    bio: string | null;
-    avatarUrl: string | null;
-  } | null;
-};
-
 export function NoteItem({
   data,
   priority,
   horizontale = false,
 }: {
-  data: NotePost;
+  data: BlogPost;
   priority?: boolean;
   horizontale?: boolean;
 }) {
@@ -35,11 +24,11 @@ export function NoteItem({
           : 'flex flex-col space-y-2'
       )}
     >
-      {data.coverImageUrl && (
+      {data.coverImage && (
         <div className="w-full overflow-hidden rounded-xl border">
           <BlurImage
             alt={data.title}
-            blurDataURL={data.coverImageUrl ?? undefined}
+            blurDataURL={data.coverImage ?? undefined}
             className={cn(
               'w-full object-cover object-center rounded-3xl',
               horizontale ? 'lg:h-70' : 'h-60'
@@ -48,7 +37,7 @@ export function NoteItem({
             height={400}
             priority={priority}
             placeholder="blur"
-            src={data.coverImageUrl || ''}
+            src={data.coverImage || ''}
             sizes="(max-width: 768px) 750px, 600px"
           />
         </div>
@@ -69,12 +58,12 @@ export function NoteItem({
           )}
         </div>
 
-        {data.author && (
+        {data.title && (
           <div className="mt-4 flex items-center space-x-3">
             <NoteAuthor
-              username={data.author.name}
-              key={data.author.id}
-              image={data.author.avatarUrl ?? undefined}
+              username={data.title}
+              key={data.id}
+              image={data.coverImage ?? undefined}
               imageOnly
             />
             {data.createdAt && (

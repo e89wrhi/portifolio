@@ -9,20 +9,9 @@ import { Icons } from '@/components/shared/icons';
 import Link from 'next/link';
 
 interface NotePostsProps {
-  posts: NotePost[];
+  posts: BlogPost[];
   initialQuery?: string;
 }
-
-type NotePost = Omit<BlogPost, 'coverImageId' | 'authorId'> & {
-  blurDataURL: string | null;
-  coverImageUrl: string | null;
-  author?: {
-    id: string;
-    name: string;
-    bio: string | null;
-    avatarUrl: string | null;
-  } | null;
-};
 
 export function NotePosts({ posts, initialQuery = '' }: NotePostsProps) {
   const [query, setQuery] = useState(initialQuery);

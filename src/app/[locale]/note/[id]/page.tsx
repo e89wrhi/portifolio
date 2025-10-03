@@ -36,7 +36,6 @@ export async function generateMetadata({
   const { id } = await params;
   const post = await prisma.blogPost.findUnique({
     where: { id: id },
-    include: { coverImage: true },
   });
 
   if (!post) return;
@@ -44,7 +43,7 @@ export async function generateMetadata({
   return constructMetadata({
     title: `Note | ${post.title}`,
     description: post.excerpt,
-    image: post.coverImage?.url,
+    image: post.coverImage ?? ``,
   });
 }
 
@@ -52,10 +51,6 @@ export default async function NotePage({ params }: NotePageProps) {
   const { id } = await params;
   const post = await prisma.blogPost.findUnique({
     where: { id: id },
-    include: {
-      coverImage: true,
-      author: true,
-    },
   });
 
   if (!post) notFound();
@@ -66,7 +61,7 @@ export default async function NotePage({ params }: NotePageProps) {
   const toc = await getTableOfContents(post.content);
 
   const thumbnailBlurhash = post.coverImage
-    ? await getBlurDataURL(post.coverImage.url)
+    ? await getBlurDataURL(post.coverImage)
     : undefined;
 
   return (
@@ -88,7 +83,7 @@ export default async function NotePage({ params }: NotePageProps) {
             {post.excerpt}
           </p>
           <div className="flex flex-nowrap items-center space-x-5 pt-1 md:space-x-8">
-            <Author username={post.author.name} />
+            <Author username={post.title} />
           </div>
         </div>
       </MaxWidthWrapper>
@@ -98,7 +93,7 @@ export default async function NotePage({ params }: NotePageProps) {
 
         <MaxWidthWrapper className="grid grid-cols-4 gap-10 pt-8 max-md:px-0">
           <div className="relative col-span-4 mb-10 flex flex-col space-y-8 border-y bg-background md:rounded-xl md:border lg:col-span-3">
-            {post.coverImage?.url && (
+            {post.coverImage && (
               <BlurImage
                 alt={post.title}
                 blurDataURL={thumbnailBlurhash ?? placeholderBlurhash}
@@ -107,7 +102,7 @@ export default async function NotePage({ params }: NotePageProps) {
                 height={630}
                 priority
                 placeholder="blur"
-                src={post.coverImage.url}
+                src={post.coverImage}
                 sizes="(max-width: 768px) 770px, 1000px"
               />
             )}
