@@ -1,0 +1,21 @@
+{
+  "portifolio": {
+    "title1": "ዲጂታል ምርቶችን መገንባት እና",
+    "title2": "ልምድ",
+    "subtitle": "ማርክ ገንቢ!",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "notes": "ማስታወሻዎች",
+    "projects": "ፕሮጀክቶች",
+    "aboutme": "ስለ እኔ",
+    "about_title1": "እኔ",
+    "about_title2": "ማርክ",
+    "about_title3": "እና",
+    "about_title4": "እኔ አበልጻጊ ነኝ።"
+  },
+  "theme": {
+    "light": "ብርሃን",
+    "dark": "ጨለማ",
+    "system": "ስርዓት"
+  }
+}

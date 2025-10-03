@@ -1,0 +1,21 @@
+{
+  "portifolio": {
+    "title1": "Building digital products and",
+    "title2": "expireance",
+    "subtitle": "Mark the builder!",
+    "linkedin": "LinkedIn",
+    "twitter": "Twitter",
+    "notes": "Notes",
+    "projects": "Projects",
+    "aboutme": "About Me",
+    "about_title1": "I'am",
+    "about_title2": "Mark",
+    "about_title3": "and",
+    "about_title4": "I am a Developer."
+  },
+  "theme": {
+    "light": "Light",
+    "dark": "Dark",
+    "system": "System"
+  }
+}
