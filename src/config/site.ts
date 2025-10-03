@@ -7,7 +7,7 @@ export const siteConfig: SiteConfig = {
   name: 'Mark',
   description: 'A Personal blog or portifolio site.',
   url: site_url,
-  ogImage: `${site_url}/_logo/saas_logo2.png`,
+  ogImage: `/_logo/saas_logo2.png`,
   links: {
     twitter: 'https://twitter.com/mytwi',
     github: 'https://github.com/mygit',
