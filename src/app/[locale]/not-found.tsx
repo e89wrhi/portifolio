@@ -6,7 +6,7 @@ export default function NotFound() {
     <div className="flex min-h-screen flex-col items-center justify-center">
       <h1 className="text-6xl font-bold">404</h1>
       <Image
-        src="/_static/illustrations/rocket-crashed.svg"
+        src="/_logo/saas_logo2.png"
         alt="404"
         width={400}
         height={400}
