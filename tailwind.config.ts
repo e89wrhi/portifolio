@@ -7,6 +7,7 @@ module.exports = {
     './src/components/**/*.{ts,tsx}',
     './src/ui/**/*.{ts,tsx}',
     './src/content/**/*.{md,mdx}',
+    './src/styles/**/*.css',
   ],
   future: {
     hoverOnlyWhenSupported: true,
