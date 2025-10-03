@@ -1,14 +1,13 @@
-import type { NextRequest } from 'next/server';
-import { NextResponse } from 'next/server';
+import { NextRequest, NextResponse } from 'next/server';
 
-const PUBLIC_FILE = /\..*$/;
-const locales = ['en', 'am', 'ja', 'zh', 'ar'];
+const PUBLIC_FILE = /\.(?:.*)$/;
+const locales = ['en', 'am'];
 const defaultLocale = 'en';
 
-export async function middleware(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const { pathname } = request.nextUrl;
 
-  // --- Skip static files, _next, and API routes ---
+  // Skip static assets and API routes fast
   if (
     pathname.startsWith('/_next') ||
     pathname.startsWith('/api') ||
@@ -17,21 +16,21 @@ export async function middleware(request: NextRequest) {
     return NextResponse.next();
   }
 
-  // --- Locale handling ---
   const segments = pathname.split('/').filter(Boolean);
   const maybeLocale = segments[0];
   const hasLocale = locales.includes(maybeLocale);
 
+  // If URL already has a locale, just persist it in a cookie and continue
   if (hasLocale) {
     const response = NextResponse.next();
-    response.cookies.set('NEXT_LOCALE', maybeLocale, { path: '/' });
+    response.cookies.set('NEXT_LOCALE', maybeLocale);
     return response;
   }
 
-  // Pick locale from cookie or fallback to default
+  // Otherwise, pick locale from cookie or fall back to default and redirect
   const cookieLocale = request.cookies.get('NEXT_LOCALE')?.value;
   const targetLocale = locales.includes(cookieLocale ?? '')
-    ? cookieLocale
+    ? (cookieLocale as string)
     : defaultLocale;
 
   const url = request.nextUrl.clone();
@@ -40,5 +39,5 @@ export async function middleware(request: NextRequest) {
 }
 
 export const config = {
-  matcher: ['/((?!_next|api|.*\\..*).*)'], // all routes except API/_next/static
+  matcher: ['/((?!_next|api|.*\\..*).*)'],
 };
