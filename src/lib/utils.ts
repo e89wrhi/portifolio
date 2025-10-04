@@ -81,6 +81,7 @@ export const timeAgo = (timestamp: Date, timeOnly?: boolean): string => {
   }`;
 };
 
+/*
 export async function fetcher<JSON = unknown>(
   input: RequestInfo,
   init?: RequestInit
@@ -101,7 +102,7 @@ export async function fetcher<JSON = unknown>(
   }
 
   return res.json();
-}
+}*/
 
 export function nFormatter(num: number, digits?: number) {
   if (!num) return '0';
