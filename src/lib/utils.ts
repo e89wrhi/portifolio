@@ -46,7 +46,7 @@ export function constructMetadata({
       title,
       description,
       images: [image],
-      creator: '@miickasmt',
+      creator: '@mytwit',
     },
     icons,
     metadataBase: new URL(siteConfig.url),
