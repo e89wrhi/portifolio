@@ -1,7 +1,7 @@
 import { NextRequest, NextResponse } from 'next/server';
 
 const PUBLIC_FILE = /\.(?:.*)$/;
-const locales = ['en', 'am'];
+const locales = ['en', 'am', 'ja', 'zh', 'ar'];
 const defaultLocale = 'en';
 
 export function middleware(request: NextRequest) {

@@ -7,47 +7,34 @@ import BlurImage from '@/components/shared/blur-image';
 export function ProjectCard({
   data,
   priority,
-  horizontale = false,
 }: {
   data: Project & {
     blurDataURL: string;
   };
   priority?: boolean;
-  horizontale?: boolean;
 }) {
   return (
     <article
       className={cn(
-        'group relative',
-        horizontale
-          ? 'grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6'
-          : 'flex flex-col space-y-2'
+        'group relative grid grid-cols-2 gap-3 md:grid-cols-1 md:gap-6 items-start'
       )}
     >
       {data.image && (
-        <div className="w-full overflow-hidden rounded-xl border">
+        <div className="rounded-xl">
           <BlurImage
             alt={data.title}
             blurDataURL={data.blurDataURL ?? placeholderBlurhash}
-            className={cn(
-              'size-full object-cover object-center',
-              horizontale ? 'lg:h-72' : null
-            )}
-            width={800}
-            height={400}
+            className={cn('h-40 w-40 object-cover object-center')}
+            width={300}
+            height={300}
             priority={priority}
             placeholder="blur"
             src={data.image}
-            sizes="(max-width: 768px) 750px, 600px"
+            sizes=""
           />
         </div>
       )}
-      <div
-        className={cn(
-          'flex flex-1 flex-col',
-          horizontale ? 'justify-center' : 'justify-between'
-        )}
-      >
+      <div className={cn('flex flex-1 flex-col justify-between')}>
         <div className="w-full">
           <h2 className="my-1.5 line-clamp-2 font-heading text-2xl">
             {data.title}
@@ -67,7 +54,7 @@ export function ProjectCard({
         </div>
       </div>
       <Link href={`project/${data.slug}`} className="absolute inset-0">
-        <span className="sr-only">View Article</span>
+        <span className="sr-only">View Project</span>
       </Link>
     </article>
   );

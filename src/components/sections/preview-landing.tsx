@@ -8,14 +8,11 @@ export default function PortifolioPreviewLanding() {
       <MaxWidthWrapper>
         <div className="rounded-xl  md:p-3.5">
           {' '}
-          <h2 className="text-center text-sm my-5 font-semibold uppercase">
-            LATEST WORK
-          </h2>
           <div className="relative aspect-video overflow-hidden rounded-xl md:rounded-lg">
-            <Link href="https://google.com">
+            <Link href="/project">
               <Image
                 className="size-full m-3 object-center"
-                src="/_illustration/illu_device2_dark.png"
+                src="/_illustration/illu_device_dark.png"
                 alt="preview landing"
                 width={2000}
                 height={1000}
