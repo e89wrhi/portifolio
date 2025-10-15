@@ -5,15 +5,8 @@ import { Mdx } from '@/components/content/mdx-components';
 
 import '@/styles/mdx.css';
 
-import { Metadata } from 'next';
-
 import { getTableOfContents } from '@/lib/toc';
-import {
-  constructMetadata,
-  formatDate,
-  getBlurDataURL,
-  placeholderBlurhash,
-} from '@/lib/utils';
+import { formatDate, getBlurDataURL, placeholderBlurhash } from '@/lib/utils';
 import BlurImage from '@/components/shared/blur-image';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 import { DashboardTableOfContents } from '@/components/shared/toc';
@@ -22,30 +15,6 @@ interface NotePageProps {
   params: Promise<{
     slug: string;
   }>;
-}
-
-export async function generateStaticParams() {
-  return allNotes.map((post) => ({
-    slug: post.slug,
-  }));
-}
-
-export async function generateMetadata({
-  params,
-}: NotePageProps): Promise<Metadata | undefined> {
-  const { slug } = await params;
-  const post = allNotes.find((post) => post.slug === slug);
-  if (!post) {
-    return;
-  }
-
-  const { title, description, image } = post;
-
-  return constructMetadata({
-    title: `${title} – Mark`,
-    description: description,
-    image,
-  });
 }
 
 export default async function NotePage({ params }: NotePageProps) {

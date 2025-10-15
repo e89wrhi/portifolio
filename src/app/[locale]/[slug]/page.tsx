@@ -5,36 +5,10 @@ import { Mdx } from '@/components/content/mdx-components';
 
 import '@/styles/mdx.css';
 
-import { Metadata } from 'next';
-
-import { constructMetadata, getBlurDataURL } from '@/lib/utils';
-
 interface PagePageProps {
   params: Promise<{
     slug: string;
   }>;
-}
-export async function generateStaticParams() {
-  return allPages.map((page) => ({
-    slug: page.slugAsParams,
-  }));
-}
-
-export async function generateMetadata({
-  params,
-}: PagePageProps): Promise<Metadata | undefined> {
-  const { slug } = await params;
-  const page = allPages.find((page) => page.slugAsParams === slug);
-  if (!page) {
-    return;
-  }
-
-  const { title, description } = page;
-
-  return constructMetadata({
-    title: `${title} – SaaS Starter`,
-    description: description,
-  });
 }
 
 export default async function PagePage({ params }: PagePageProps) {
@@ -48,7 +22,7 @@ export default async function PagePage({ params }: PagePageProps) {
   const images = await Promise.all(
     page.images.map(async (src: string) => ({
       src,
-      blurDataURL: await getBlurDataURL(src),
+      blurDataURL: null, //await getBlurDataURL(src),
     }))
   );
 
