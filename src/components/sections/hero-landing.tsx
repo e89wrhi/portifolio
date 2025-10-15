@@ -64,15 +64,16 @@ export default function PortifolioHeroLanding() {
           style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
         >
           <Link
-            href="/note"
-            prefetch={true}
+            href="https://x.com/username"
+            target="_blank"
             className={cn(buttonVariants({ size: 'lg' }), 'gap-2 rounded-full')}
           >
             <Icons.twitter className="size-4" />
             <span>{t('portifolio.twitter')}</span>
           </Link>
           <Link
-            href="/project"
+            href="https://linkedin.com/username"
+            target="_blank"
             className={cn(
               buttonVariants({
                 variant: 'secondary',
