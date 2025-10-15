@@ -4,6 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import './env.mjs';
 
 const nextConfig: NextConfig = {
+  transpilePackages: ['react-tweet'],
   reactStrictMode: true,
   images: {
     remotePatterns: [

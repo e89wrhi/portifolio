@@ -2,6 +2,7 @@ import { allProjects } from '.contentlayer/generated';
 
 import { constructMetadata, getBlurDataURL } from '@/lib/utils';
 import { ProjectPosts } from '@/components/content/project-posts';
+import { ProjectHeaderLayout } from '@/components/content/project-header-layout';
 
 export const metadata = constructMetadata({
   title: 'Projects – Mark',
@@ -18,5 +19,10 @@ export default async function ProjectsPage() {
       }))
   );
 
-  return <ProjectPosts posts={posts} />;
+  return (
+    <>
+      <ProjectHeaderLayout />
+      <ProjectPosts posts={posts} />
+    </>
+  );
 }

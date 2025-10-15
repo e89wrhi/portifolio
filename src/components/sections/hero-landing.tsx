@@ -8,6 +8,7 @@ import { Icons } from '@/components/shared/icons';
 //import { siteConfig } from '@/config/site';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useTranslations } from 'next-intl';
+import SkillsGroup from './skills-group';
 
 export default function PortifolioHeroLanding() {
   const t = useTranslations();
@@ -43,49 +44,7 @@ export default function PortifolioHeroLanding() {
             <Icons.user className="size-11" />
           </AvatarFallback>
         </Avatar>
-
-        <div className="flex flex-row border rounded-full items-center space-x-3 px-5 py-3">
-          <div className="flex flex-row -space-x-4 md:-space-x-5">
-            <Avatar className="h-8 w-8 md:h-10 border border-4 border-white dark:border-black md:w-10 bg-gray-100 dark:bg-gray-900">
-              <AvatarImage
-                alt="Picture"
-                height={50}
-                width={50}
-                src="/_avatars/a1.png"
-                referrerPolicy="no-referrer"
-              />
-              <AvatarFallback>
-                <span className="sr-only">A</span>
-              </AvatarFallback>
-            </Avatar>
-            <Avatar className="h-8 w-8 md:h-10 border border-4 border-white dark:border-black md:w-10 bg-gray-100 dark:bg-gray-900">
-              <AvatarImage
-                alt="Picture"
-                height={50}
-                width={50}
-                src="/_avatars/a2.png"
-                referrerPolicy="no-referrer"
-              />
-              <AvatarFallback>
-                <span className="sr-only">A</span>
-              </AvatarFallback>
-            </Avatar>
-            <Avatar className="h-8 w-8 md:h-10 border border-4 border-white dark:border-black md:w-10 bg-gray-100 dark:bg-gray-900">
-              <AvatarImage
-                alt="Picture"
-                height={50}
-                width={50}
-                src="/_avatars/a3.png"
-                referrerPolicy="no-referrer"
-              />
-              <AvatarFallback>
-                <span className="sr-only">A</span>
-              </AvatarFallback>
-            </Avatar>
-          </div>
-
-          <p>Trusted by 12k Customers</p>
-        </div>
+        <SkillsGroup />
         <h1 className="mx-10 text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
           {t('portifolio.title1')}{' '}
           <span className="text-gradient_green-yellow font-extrabold">
@@ -109,21 +68,21 @@ export default function PortifolioHeroLanding() {
             prefetch={true}
             className={cn(buttonVariants({ size: 'lg' }), 'gap-2 rounded-full')}
           >
-            <Icons.note className="size-4" />
-            <span>{t('portifolio.notes')}</span>
+            <Icons.twitter className="size-4" />
+            <span>{t('portifolio.twitter')}</span>
           </Link>
           <Link
             href="/project"
             className={cn(
               buttonVariants({
-                variant: 'outline',
+                variant: 'secondary',
                 size: 'lg',
               }),
               'px-5 rounded-full'
             )}
           >
-            <Icons.project className="mr-2 size-4" />
-            <p>{t('portifolio.projects')}</p>
+            <Icons.linkedin className="mr-2 size-4" />
+            <p>{t('portifolio.linkedin')}</p>
           </Link>
         </div>
       </div>

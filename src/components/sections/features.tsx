@@ -13,7 +13,7 @@ export default function PortifolioFeatures() {
               const Icon = Icons[feature.icon || 'nextjs'];
               return (
                 <div
-                  className="group relative overflow-hidden rounded-2xl border bg-background p-5 md:p-8"
+                  className="group relative overflow-hidden rounded-4xl border bg-background p-5 md:p-8"
                   key={feature.title}
                 >
                   <div

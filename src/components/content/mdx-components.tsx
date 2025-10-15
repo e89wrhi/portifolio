@@ -7,8 +7,10 @@ import { MdxCard } from '@/components/content/mdx-card';
 import BlurImage from '@/components/shared/blur-image';
 import { Callout } from '@/components/shared/callout';
 import { CopyButton } from '@/components/shared/copy-button';
+import EmbeddedTweet from '../shared/embedded-tweet';
 
 const components = {
+  Tweet: EmbeddedTweet,
   h1: ({ className, ...props }) => (
     <h1
       className={cn(
@@ -214,7 +216,7 @@ export function Mdx({ code, images }: MdxProps) {
     )?.blurDataURL;
 
     return (
-      <div className="mt-5 w-full overflow-hidden rounded-lg border">
+      <div className="mt-5 w-full overflow-hidden rounded-lg">
         <BlurImage
           {...props}
           blurDataURL={blurDataURL}
@@ -225,7 +227,7 @@ export function Mdx({ code, images }: MdxProps) {
   };
 
   return (
-    <div className="mdx">
+    <div className="mdx border-0">
       <Component
         components={{
           ...components,

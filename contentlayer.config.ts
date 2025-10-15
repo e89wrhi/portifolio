@@ -54,6 +54,32 @@ export const Project = defineDocumentType(() => ({
   },
 }));
 
+export const Note = defineDocumentType(() => ({
+  name: 'Note',
+  filePathPattern: `notes/**/*.mdx`,
+  contentType: 'mdx',
+  fields: {
+    title: { type: 'string', required: true },
+    description: { type: 'string', required: true },
+    image: { type: 'string', required: false },
+    date: { type: 'date', required: true },
+    authors: { type: 'list', of: { type: 'string' } },
+    categories: { type: 'list', of: { type: 'string' } },
+    related: { type: 'list', of: { type: 'string' } },
+  },
+  computedFields: {
+    slug: {
+      type: 'string',
+      resolve: (doc) => doc._raw.sourceFileName.replace(/\.mdx$/, ''),
+    },
+    url: {
+      type: 'string',
+      resolve: (doc) =>
+        `/notes/${doc._raw.sourceFileName.replace(/\.mdx$/, '')}`,
+    },
+  },
+}));
+
 export const Page = defineDocumentType(() => ({
   name: 'Page',
   filePathPattern: `pages/**/*.mdx`,
@@ -72,7 +98,7 @@ export const Page = defineDocumentType(() => ({
 
 export default makeSource({
   contentDirPath: './src/content',
-  documentTypes: [Page, Project],
+  documentTypes: [Page, Project, Note],
   mdx: {
     remarkPlugins: [remarkGfm],
     rehypePlugins: [

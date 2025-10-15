@@ -1,82 +1,36 @@
 import Link from 'next/link';
+import { Note } from '.contentlayer/generated';
+
 import { cn, formatDate } from '@/lib/utils';
-import BlurImage from '@/components/shared/blur-image';
-import { BlogPost } from '@prisma/client';
-import NoteAuthor from './note-posts-item-author';
 
-export function NoteItem({
-  data,
-  priority,
-  horizontale = false,
-}: {
-  data: BlogPost;
-  priority?: boolean;
-  horizontale?: boolean;
-}) {
-  if (!data) return null; // Guard against undefined
-
+export function NoteCard({ data }: { data: Note }) {
   return (
     <article
       className={cn(
-        'group relative',
-        horizontale
-          ? 'grid grid-cols-1 gap-3 md:grid-cols-2 md:gap-6'
-          : 'flex flex-col space-y-2'
+        'group relative grid gap-3 md:grid-cols-1 md:gap-6 items-start'
       )}
     >
-      {data.coverImage && (
-        <div className="w-full overflow-hidden rounded-xl border">
-          <BlurImage
-            alt={data.title}
-            blurDataURL={data.coverImage ?? `/_img/img1.png`}
-            className={cn(
-              'w-full object-cover object-center rounded-3xl',
-              horizontale ? 'lg:h-70' : 'h-60'
-            )}
-            width={800}
-            height={400}
-            priority={priority}
-            placeholder="blur"
-            src={data.coverImage ?? `/_img/img1.png`}
-            sizes="(max-width: 768px) 750px, 600px"
-          />
-        </div>
-      )}
-
-      <div
-        className={cn(
-          'flex flex-1 flex-col',
-          horizontale ? 'justify-center' : 'justify-between'
-        )}
-      >
+      <div className={cn('flex flex-1 flex-col justify-between')}>
         <div className="w-full">
-          <h2 className="my-1.5 line-clamp-2 font-heading text-2xl">
+          <h2 className="my-1.5 font-bold line-clamp-2 font-heading text-2xl">
             {data.title}
           </h2>
-          {data.excerpt && (
-            <p className="line-clamp-2 text-muted-foreground">{data.excerpt}</p>
+          {data.description && (
+            <p className="line-clamp-2 text-muted-foreground">
+              {data.description}
+            </p>
           )}
         </div>
-
-        {data.title && (
-          <div className="mt-4 flex items-center space-x-3">
-            <NoteAuthor
-              username={data.title}
-              key={data.id}
-              image={data.coverImage ?? ``}
-              imageOnly
-            />
-            {data.createdAt && (
-              <p className="text-sm text-muted-foreground">
-                {formatDate(data.createdAt.toISOString())}
-              </p>
-            )}
-          </div>
-        )}
+        <div className="mt-4 flex items-center space-x-3">
+          {data.date && (
+            <p className="text-sm text-muted-foreground">
+              {formatDate(data.date)}
+            </p>
+          )}
+        </div>
       </div>
-
-      <Link href={`/note/${data.id}`} className="absolute inset-0">
-        <span className="sr-only">View Article</span>
+      <Link href={`note/${data.slug}`} className="absolute inset-0">
+        <span className="sr-only">View Note</span>
       </Link>
     </article>
   );

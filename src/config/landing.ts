@@ -1,4 +1,25 @@
-import { FeatureLdg, TestimonialType } from '@/types';
+import { FeatureLdg, MarketingConfig, TestimonialType } from '@/types';
+import { useTranslations } from 'next-intl';
+
+export function TabConfigs(): MarketingConfig {
+  const t = useTranslations();
+  return {
+    mainNav: [
+      {
+        title: t('portifolio.mark'),
+        href: '/',
+      },
+      {
+        title: t('portifolio.notes'),
+        href: '/note',
+      },
+      {
+        title: t('portifolio.projects'),
+        href: '/project',
+      },
+    ],
+  };
+}
 
 export const portifolioFeatures: FeatureLdg[] = [
   {

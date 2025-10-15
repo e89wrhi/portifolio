@@ -77,6 +77,7 @@ export const Icons = {
   webdesign: LayoutDashboard,
   note: Notebook,
   project: FolderOpenDot,
+  options: MoreVertical,
   gitHub: ({ ...props }: LucideProps) => (
     <svg
       aria-hidden="true"

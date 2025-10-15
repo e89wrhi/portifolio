@@ -23,14 +23,15 @@ export function ModeToggle() {
         <Button variant="ghost" size="sm" className="h-8 w-8 px-0 rounded-full">
           <Icons.sun className="rotate-0 scale-100 transition-all dark:-rotate-90 dark:scale-0" />
           <Icons.moon className="absolute rotate-90 scale-0 transition-all dark:rotate-0 dark:scale-100" />
-          <span className="sr-only">Toggle theme</span>
         </Button>
       </DropdownMenuTrigger>
       <DropdownMenuContent
-        align="end"
-        className="bg-background/50 backdrop-blur-xl"
+        align="start"
+        className="bg-gray-100 dark:bg-gray-900 border-none rounded-xl 
+        backdrop-blur-xl m-4"
       >
         <DropdownMenuItem
+          className="rounded-full px-2"
           onClick={() => {
             setTheme('light');
           }}
@@ -39,6 +40,7 @@ export function ModeToggle() {
           <span>{t('theme.light')}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
+          className="rounded-full px-2"
           onClick={() => {
             setTheme('dark');
           }}
@@ -47,6 +49,7 @@ export function ModeToggle() {
           <span>{t('theme.dark')}</span>
         </DropdownMenuItem>
         <DropdownMenuItem
+          className="rounded-full px-2"
           onClick={() => {
             setTheme('system');
           }}
