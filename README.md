@@ -1,70 +1,118 @@
-# Getting Started with Create React App
+<div align="center">
+  <h1>🚀 Next.js Modern SaaS & Portfolio Template</h1>
+  <p>
+    A robust, production-ready full-stack template built with Next.js 15, React 19, Tailwind CSS 4, Prisma, and Supabase. Features internationalization, Markdown blogs via Contentlayer, and payments via Stripe.
+  </p>
+</div>
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+---
 
-## Available Scripts
+## ✨ Features
 
-In the project directory, you can run:
+- **Framework**: Next.js 15 (App Router ready)
+- **UI & Styling**: Tailwind CSS 4, Radix UI primitives, Framer Motion, and `lucide-react` icons.
+- **Database & ORM**: PostgreSQL via Supabase, managed by Prisma with Accelerate.
+- **Authentication**: NextAuth.js v5 (Beta)
+- **Content & Blog**: Markdown/MDX powered by Contentlayer2
+- **Internationalization (i18n)**: Multi-language support out-of-the-box (`next-intl` & `next-i18next`).
+- **Payments**: Integrated with Stripe.
+- **Emails**: Built with React Email.
+- **Forms & Validation**: React Hook Form coupled with Zod.
+- **Analytics & SEO**: Vercel Analytics, `@vercel/og` for dynamic Open Graph images.
 
-### `npm start`
+<br />
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## 🛠️ Tech Stack
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Core**: React 19, Next.js 15, TypeScript
+- **Styling**: Tailwind CSS 4, PostCSS
+- **Components**: Radix UI, Framer Motion
+- **State & Data Fetching**: TanStack React Query v5
+- **Database Backend**: Supabase, Prisma ORM
+- **Content Management**: Contentlayer2
 
-### `npm test`
+<br />
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+## 🚀 Getting Started
 
-### `npm run build`
+### Prerequisites
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Make sure you have Node.js (v18+) and npm/yarn/pnpm installed.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+### 1. Clone & Install dependencies
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+```bash
+# Clone the repository (if you haven't already)
+git clone <repository-url>
+cd portifolio
 
-### `npm run eject`
+# Install dependencies (using npm in this example)
+npm install
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+### 2. Environment Variables
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Create a `.env` or `.env.local` file in the root of the project and provide the necessary variables. Refer to `env.mjs` to see the required environment schemas.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+```env
+# Example environment variables needed:
+DATABASE_URL="your-supabase-db-url"
+NEXT_PUBLIC_STRIPE_PUBLISHABLE_KEY="..."
+STRIPE_SECRET_KEY="..."
+# Add your other NextAuth, Stripe, and App variables here
+```
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+### 3. Database Setup
 
-## Learn More
+To generate the Prisma client based on your schema:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+```bash
+npx prisma generate
+```
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+To format and push your schema to the database (if applicable):
+```bash
+npx prisma db push
+```
 
-### Code Splitting
+### 4. Run the Development Server
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+```bash
+npm run dev
+```
 
-### Analyzing the Bundle Size
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+<br />
 
-### Making a Progressive Web App
+## 📂 Project Structure
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
+```text
+├── src/                # Source code (pages, components, libs, hooks)
+├── public/             # Static assets (images, fonts, etc.)
+├── prisma/             # Prisma schema and migrations
+├── locales/            # i18n translation files
+├── components.json     # shadcn/ui configuration
+├── contentlayer.config.ts # Contentlayer settings for MDX blog
+├── next.config.ts      # Next.js configuration
+├── tailwind.config.ts  # Tailwind CSS customizing rules
+└── package.json        # Dependencies & Scripts
+```
 
-### Advanced Configuration
+<br />
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
+## 📜 Available Scripts
 
-### Deployment
+- `npm run dev`: Starts the Next.js development server.
+- `npm run build`: Compiles and builds the Next.js application for production.
+- `npm run start`: Starts the application in production mode (after building).
+- `npm run lint`: Lints the code using ESLint.
+- `npm run lint:fix`: Automatically fixes linting errors.
+- `npm run format`: Formats code throughout the project using Prettier.
+- `npm run preview`: Builds and then starts the app locally for preview.
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
+---
 
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+<div align="center">
+  Generated with ❤️ for modern web development.
+</div>
