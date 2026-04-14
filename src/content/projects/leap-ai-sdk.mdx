@@ -1,0 +1,41 @@
+---
+title: Leap AI SDK
+description: A provider-agnostic .NET toolkit for building scalable AI-powered applications, chatbots, and autonomous agents with an enterprise-grade architecture.
+image: /_projects/leap_logo.png
+date: "2024-04-14"
+authors:
+  - mark
+categories:
+  - ai
+  - dotnet
+  - backend
+  - library
+related:
+  - ai-net-platform
+  - prompt-master
+---
+
+<Image
+  src="/_projects/leap_banner.png"
+  width="718"
+  height="404"
+  alt="Leap AI SDK Banner"
+/>
+
+**Overview:**  
+The **Leap AI SDK** is a production-ready .NET toolkit that simplifies the integration of Large Language Models into enterprise applications. It provides a unified, stateless service interface that remains completely agnostic to the underlying AI provider, allowing developers to switch between OpenAI, Gemini, Anthropic, and others with minimal code changes.
+
+**Key Capabilities:**  
+- **Unified Provider Architecture**: Interact with any model provider natively from C# using a single, consistent API.
+- **Real-time Streaming**: Native support for Server-Sent Events (SSE) mapped into `IAsyncEnumerable` for fluid, real-time UI updates.
+- **Structured Data Extraction**: Forced JSON output mapping directly into strongly-typed C# objects, eliminating manual string parsing.
+- **Scalable Service Design**: Stateless architecture optimized for high-concurrency environments and agentic workflows.
+- **Multi-Model Support**: Pre-configured adapters for GPT-4o, Gemini Pro, DeepSeek, Grok, and more.
+
+**Technical Profile:**  
+- **Language**: C# / .NET 8
+- **Distribution**: NuGet Package (`LeapAi.Sdk`)
+- **Patterns**: Provider Pattern, Adapter Pattern, Service-Oriented Architecture.
+
+**Status:**  
+✅ Published – [NuGet Package](https://www.nuget.org/packages/LeapAi.Sdk)
