@@ -7,7 +7,8 @@ import { NavOptions } from './nav-options';
 import { TabConfigs } from '@/config/landing';
 import { cn } from '@/lib/utils';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { Tooltip, TooltipContent, TooltipTrigger } from '../ui/tooltip';
+import { Icons } from '@/components/shared/icons';
+import { siteConfig } from '@/config/site';
 
 interface NavBarProps {
   scroll?: boolean;
@@ -26,6 +27,12 @@ export function NavBar({ scroll = false }: NavBarProps) {
     >
       <MaxWidthWrapper className="flex h-19 items-center justify-between py-4">
         <div className="flex gap-6 md:gap-10">
+          <Link href="/" className="flex items-center space-x-2">
+            <Icons.logo className="size-6" />
+            <span className="font-urban text-xl font-bold">
+              {siteConfig.name}
+            </span>
+          </Link>
           <div className="flex items-center space-x-3">
             <NavOptions />
           </div>
@@ -50,13 +57,6 @@ export function NavBar({ scroll = false }: NavBarProps) {
             ))}
           </nav>
         ) : null}
-
-        <Tooltip>
-          <TooltipTrigger>
-            <p> - </p>
-          </TooltipTrigger>
-          <TooltipContent className="rounded-full">Hi There!</TooltipContent>
-        </Tooltip>
       </MaxWidthWrapper>
     </header>
   );

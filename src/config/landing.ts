@@ -6,10 +6,6 @@ export function TabConfigs(): MarketingConfig {
   return {
     mainNav: [
       {
-        title: t('portifolio.mark'),
-        href: '/',
-      },
-      {
         title: t('portifolio.notes'),
         href: '/note',
       },

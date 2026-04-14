@@ -45,6 +45,8 @@ import {
   FolderOpenDot,
   ArrowLeft,
   ShoppingBag,
+  Download,
+  ExternalLink,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -164,4 +166,6 @@ export const Icons = {
   ),
   user: User,
   warning: AlertTriangle,
+  download: Download,
+  externalLink: ExternalLink,
 };

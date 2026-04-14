@@ -7,11 +7,11 @@ import { buttonVariants } from '@/components/ui/button';
 import { Icons } from '@/components/shared/icons';
 //import { siteConfig } from '@/config/site';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
-import { useTranslations } from 'next-intl';
-import SkillsGroup from './skills-group';
+import { useTranslations, useLocale } from 'next-intl';
 
 export default function PortifolioHeroLanding() {
   const t = useTranslations();
+  const locale = useLocale();
   /*const { stargazers_count: stars } = await fetch(
     'https://api.github.com/repos/mickasmt/next-saas-stripe-starter',
     {
@@ -44,7 +44,6 @@ export default function PortifolioHeroLanding() {
             <Icons.user className="size-11" />
           </AvatarFallback>
         </Avatar>
-        <SkillsGroup />
         <h1 className="mx-10 text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
           {t('portifolio.title1')}{' '}
           <span className="text-gradient_green-yellow font-extrabold">
@@ -85,6 +84,34 @@ export default function PortifolioHeroLanding() {
             <Icons.linkedin className="mr-2 size-4" />
             <p>{t('portifolio.linkedin')}</p>
           </Link>
+        </div>
+
+        <div
+          className="flex justify-center space-x-2 md:space-x-4"
+          style={{ animationDelay: '0.45s', animationFillMode: 'forwards' }}
+        >
+          <Link
+            href={`/${locale}/resume`}
+            target="_blank"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'lg' }),
+              'px-5 rounded-full'
+            )}
+          >
+            <Icons.externalLink className="mr-2 size-4" />
+            <span>{t('portifolio.view_resume')}</span>
+          </Link>
+          <a
+            href="/Resume.pdf"
+            download="Resume.pdf"
+            className={cn(
+              buttonVariants({ variant: 'outline', size: 'lg' }),
+              'px-5 rounded-full'
+            )}
+          >
+            <Icons.download className="mr-2 size-4" />
+            <span>{t('portifolio.download_resume')}</span>
+          </a>
         </div>
       </div>
     </section>
