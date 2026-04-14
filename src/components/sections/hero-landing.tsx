@@ -63,7 +63,7 @@ export default function PortifolioHeroLanding() {
           style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
         >
           <Link
-            href="https://x.com/username"
+            href="https://x.com/nolimitprima"
             target="_blank"
             className={cn(buttonVariants({ size: 'lg' }), 'gap-2 rounded-full')}
           >
@@ -71,7 +71,21 @@ export default function PortifolioHeroLanding() {
             <span>{t('portifolio.twitter')}</span>
           </Link>
           <Link
-            href="https://linkedin.com/username"
+            href="https://github.com/e89wrhi"
+            target="_blank"
+            className={cn(
+              buttonVariants({
+                variant: 'secondary',
+                size: 'lg',
+              }),
+              'px-5 rounded-full'
+            )}
+          >
+            <Icons.gitHub className="mr-2 size-4" />
+            <p>{t('portifolio.github')}</p>
+          </Link>
+          <Link
+            href="https://www.linkedin.com/in/endashaw-markos-15b240231/"
             target="_blank"
             className={cn(
               buttonVariants({
