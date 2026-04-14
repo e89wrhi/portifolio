@@ -4,7 +4,7 @@ import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
 
 const logos = [
   {
-    title: 'Next.js 14',
+    title: 'Next.js 15',
     href: 'https://nextjs.org/',
     icon: (
       <svg
@@ -59,86 +59,65 @@ const logos = [
     ),
   },
   {
-    title: 'Neon',
-    href: 'https://neon.tech/',
+    title: 'Turborepo',
+    href: 'https://turbo.build/',
     icon: (
       <svg
+        className="h-7 w-auto"
+        viewBox="0 0 24 24"
+        fill="none"
         xmlns="http://www.w3.org/2000/svg"
-        width="102"
-        height="28"
-        fill="currentColor"
-        className="size-full"
       >
         <path
-          fill="#00E0D9"
-          fillRule="evenodd"
-          d="M0 4.828C0 2.16 2.168 0 4.843 0h18.405c2.675 0 4.844 2.161 4.844 4.828V20.43c0 2.758-3.502 3.955-5.2 1.778l-5.31-6.809v8.256c0 2.4-1.952 4.345-4.36 4.345H4.843C2.168 28 0 25.839 0 23.172zm4.843-.966a.967.967 0 0 0-.968.966v18.344c0 .534.433.966.968.966h8.525c.267 0 .339-.216.339-.483v-11.07c0-2.76 3.502-3.956 5.2-1.779l5.31 6.809V4.828c0-.534.05-.966-.484-.966z"
-          clipRule="evenodd"
+          d="M12 2L2 7V17L12 22L22 17V7L12 2Z"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
-          fill="url(#a)"
-          fillRule="evenodd"
-          d="M0 4.828C0 2.16 2.168 0 4.843 0h18.405c2.675 0 4.844 2.161 4.844 4.828V20.43c0 2.758-3.502 3.955-5.2 1.778l-5.31-6.809v8.256c0 2.4-1.952 4.345-4.36 4.345H4.843C2.168 28 0 25.839 0 23.172zm4.843-.966a.967.967 0 0 0-.968.966v18.344c0 .534.433.966.968.966h8.525c.267 0 .339-.216.339-.483v-11.07c0-2.76 3.502-3.956 5.2-1.779l5.31 6.809V4.828c0-.534.05-.966-.484-.966z"
-          clipRule="evenodd"
+          d="M12 22V12"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
         <path
-          fill="url(#b)"
-          fillOpacity=".4"
-          fillRule="evenodd"
-          d="M0 4.828C0 2.16 2.168 0 4.843 0h18.405c2.675 0 4.844 2.161 4.844 4.828V20.43c0 2.758-3.502 3.955-5.2 1.778l-5.31-6.809v8.256c0 2.4-1.952 4.345-4.36 4.345H4.843C2.168 28 0 25.839 0 23.172zm4.843-.966a.967.967 0 0 0-.968.966v18.344c0 .534.433.966.968.966h8.525c.267 0 .339-.216.339-.483v-11.07c0-2.76 3.502-3.956 5.2-1.779l5.31 6.809V4.828c0-.534.05-.966-.484-.966z"
-          clipRule="evenodd"
+          d="M22 7L12 12L2 7"
+          stroke="currentColor"
+          strokeWidth="2"
+          strokeLinecap="round"
+          strokeLinejoin="round"
         />
-        <path
-          fill="#63F655"
-          d="M23.248 0c2.675 0 4.843 2.161 4.843 4.828V20.43c0 2.758-3.502 3.955-5.2 1.778l-5.31-6.809v8.256c0 2.4-1.951 4.345-4.359 4.345a.483.483 0 0 0 .485-.483V12.584c0-2.758 3.501-3.955 5.2-1.777l5.31 6.808V.965A.967.967 0 0 0 23.248 0"
-        />
-        <path
-          fill="currentColor"
-          d="M48.17 7.432v8.032l-7.346-8.032H37v13.136h3.487v-8.632l8.002 8.632h3.169V7.432zM58.123 17.64v-2.326h7.807v-2.797h-7.807V10.36h9.47V7.432H54.565v13.136h13.224v-2.927zM77.056 21c4.903 0 8.09-2.552 8.09-7s-3.187-7-8.09-7-8.073 2.552-8.073 7 3.169 7 8.073 7m0-3.115c-2.727 0-4.408-1.408-4.408-3.885s1.7-3.885 4.408-3.885c2.726 0 4.408 1.408 4.408 3.885s-1.682 3.885-4.408 3.885M98.513 7.432v8.032l-7.347-8.032h-3.824v13.136h3.488v-8.632l8.001 8.632H102V7.432z"
-        />
-        <defs>
-          <linearGradient
-            id="a"
-            x1="28.092"
-            x2="3.481"
-            y1="28"
-            y2="-.08"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopColor="#62F755" />
-            <stop offset="1" stopColor="#8FF986" stopOpacity="0" />
-          </linearGradient>
-          <linearGradient
-            id="b"
-            x1="28.092"
-            x2="11.421"
-            y1="28"
-            y2="21.494"
-            gradientUnits="userSpaceOnUse"
-          >
-            <stop stopOpacity=".9" />
-            <stop offset="1" stopColor="#1A1A1A" stopOpacity="0" />
-          </linearGradient>
-        </defs>
       </svg>
     ),
   },
   {
-    title: 'Auth.js',
-    href: 'https://authjs.dev/',
+    title: 'Supabase',
+    href: 'https://supabase.com/',
     icon: (
-      <div className="flex items-center gap-x-1.5">
-        <svg
-          viewBox="0 0 24 24"
-          fill="currentColor"
-          stroke="currentColor"
-          strokeWidth="1"
-          className="size-[34px]"
-        >
-          <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"></path>
-        </svg>
-        <span className="text-2xl font-bold tracking-tight">Auth.js</span>
-      </div>
+      <svg
+        className="h-7 w-auto"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M21.362 9.354H12V.347L2.638 14.646H12v9.007L21.362 9.354z" />
+      </svg>
+    ),
+  },
+  {
+    title: 'Clerk',
+    href: 'https://clerk.com/',
+    icon: (
+      <svg
+        className="h-7 w-auto"
+        viewBox="0 0 24 24"
+        fill="currentColor"
+        xmlns="http://www.w3.org/2000/svg"
+      >
+        <path d="M12 2C6.48 2 2 6.48 2 12s4.48 10 10 10 10-4.48 10-10S17.52 2 12 2zm0 18c-3.31 0-6-2.69-6-6s2.69-6 6-6 6 2.69 6 6-2.69 6-6 6z" />
+      </svg>
     ),
   },
   {
@@ -246,22 +225,8 @@ export default function ProtifolioPowered() {
           WORKED With
         </h2>
 
-        <div className="mt-10 grid grid-cols-2 place-items-center gap-8 md:grid-cols-4">
-          {logos.slice(0, 4).map((logo) => (
-            <Link
-              target="_blank"
-              key={logo.title}
-              href={logo.href}
-              aria-label={logo.title}
-              className="duration-250 grayscale transition hover:text-foreground hover:grayscale-0"
-            >
-              {logo.icon}
-            </Link>
-          ))}
-        </div>
-
-        <div className="mt-8 grid grid-cols-2 place-items-center gap-8 md:mt-10 md:grid-cols-4">
-          {logos.slice(4, 8).map((logo) => (
+        <div className="mt-10 grid grid-cols-2 place-items-center gap-8 md:grid-cols-4 lg:grid-cols-5">
+          {logos.map((logo) => (
             <Link
               target="_blank"
               key={logo.title}

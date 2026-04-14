@@ -19,46 +19,46 @@ export function TabConfigs(): MarketingConfig {
 
 export const portifolioFeatures: FeatureLdg[] = [
   {
-    title: 'Website Design',
+    title: 'AI & Machine Learning',
     description:
-      'Clean, modern, and user-friendly website designs focused on great user experience.',
-    icon: 'webdesign',
-    link: 'webdesign',
+      'Developing AI-powered systems with ML.NET and LLM integration for chat, summarization, and predictive analytics.',
+    icon: 'consultation',
+    link: 'ai-ml',
   },
   {
-    title: 'App Design',
+    title: 'Backend Architecture',
     description:
-      'Crafting intuitive and engaging mobile app interfaces that users love.',
-    icon: 'appdesign',
-    link: 'appdesign',
-  },
-  {
-    title: 'Website Builder',
-    description:
-      'Custom websites built with Next.js for speed, SEO, and scalability.',
-    icon: 'web',
-    link: 'web',
-  },
-  {
-    title: 'App Build',
-    description:
-      'Full-cycle mobile app development with responsive and high-performing results.',
-    icon: 'app',
-    link: 'app',
-  },
-  {
-    title: 'Backend Build',
-    description:
-      'Robust and scalable APIs with .NET backend architecture for smooth integration.',
+      'Designing scalable microservices and modular monoliths using DDD, CQRS, and Clean Architecture patterns in .NET.',
     icon: 'backend',
     link: 'backend',
   },
   {
-    title: 'Consultation',
+    title: 'Full-Stack Development',
     description:
-      'Helping you plan and structure digital solutions that align with your goals.',
-    icon: 'consultation',
-    link: 'consultation',
+      'Building end-to-end solutions combining robust .NET backends with high-performance React and Next.js frontends.',
+    icon: 'web',
+    link: 'fullstack',
+  },
+  {
+    title: 'Cross-Platform Mobile',
+    description:
+      'Crafting intuitive mobile experiences using .NET MAUI and Xamarin.Forms for logistics and social networking.',
+    icon: 'appdesign',
+    link: 'mobile',
+  },
+  {
+    title: 'Enterprise Tools',
+    description:
+      'Streamlining complex workflows with Turborepo monorepos, Stripe payment integration, and Agile/Scrum methodologies.',
+    icon: 'dashboard',
+    link: 'tools',
+  },
+  {
+    title: 'Content & Logistics',
+    description:
+      'Delivering specialized technical solutions for content-heavy platforms and AI-driven logistics ecosystems.',
+    icon: 'bookOpen',
+    link: 'domains',
   },
 ];
 
