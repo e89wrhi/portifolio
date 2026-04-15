@@ -1,5 +1,5 @@
 <div align="center">
-  <h1>🚀 Next.js Modern SaaS & Portfolio Template</h1>
+  <h1>Mark's Portfolio Site</h1>
   <p>
     A robust, production-ready full-stack template built with Next.js 15, React 19, Tailwind CSS 4, Prisma, and Supabase. Features internationalization, Markdown blogs via Contentlayer, and payments via Stripe.
   </p>
