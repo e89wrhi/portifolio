@@ -23,7 +23,9 @@ export default async function ResumePage() {
           </Link>
           <div className="flex items-center gap-2">
             <Icons.logo className="size-8 text-primary" />
-            <h1 className="text-3xl font-bold tracking-tight">{siteConfig.name}</h1>
+            <h1 className="text-3xl font-bold tracking-tight">
+              {siteConfig.name}
+            </h1>
           </div>
         </div>
         <Link
@@ -38,7 +40,7 @@ export default async function ResumePage() {
           <span>{t('download_resume')}</span>
         </Link>
       </div>
-      
+
       <div className="flex-1 w-full rounded-xl overflow-hidden border shadow-sm bg-muted min-h-[800px]">
         <iframe
           src="/Resume.pdf"
