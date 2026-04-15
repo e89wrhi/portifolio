@@ -9,13 +9,19 @@
     "projects": "ፕሮጀክቶች",
     "aboutme": "ስለ እኔ",
     "about_title1": "እኔ",
-    "about_title2": "ማርክ",
-    "about_title3": "እና",
-    "about_title4": "እኔ አበልጻጊ ነኝ።",
+    "about_title2": "እንደሻው ማርቆስ",
+    "about_title3": "ነኝ",
+    "about_title4": "ሙሉ-ስታክ ሶፍትዌር ኢንጂነር.",
+    "about_description": "እኔ ከፍተኛ አፈፃፀም ያላቸውን፣ ሊለኩ የሚችሉ እና በሚያምር ሁኔታ የተቀረጹ ዲጂታል ምርቶችን በመገንባት ላይ አተኩራለሁ። በአርክቴክቸርም ሆነ በተጠቃሚ ተሞክሮ (UX) ላይ ጠንካራ መሠረት ስላኝ፣ ውስብስብ ሀሳቦችን ወደ ቀለል ያሉ መፍትሄዎች እቀይራለሁ።",
+    "expertise_microservices": "ማይክሮ ሰርቪሶች",
+    "expertise_dotnet": ".NET Backend",
+    "expertise_nextjs": "Next.js Frontend",
+    "expertise_ui": "UI ዲዛይኖች",
+    "expertise_system": "የስርዓት ዲዛይኖች",
     "view_resume": "ሪዙሜ ይመልከቱ",
     "download_resume": "ሪዙሜ ያውርዱ",
     "github": "GitHub",
-    "mark": "Mark"
+    "mark": "እንደሻው ማርቆስ"
   },
   "theme": {
     "light": "ብርሃን",

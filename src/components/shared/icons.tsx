@@ -47,6 +47,7 @@ import {
   ShoppingBag,
   Download,
   ExternalLink,
+  Sparkles,
 } from 'lucide-react';
 
 export type Icon = LucideIcon;
@@ -168,4 +169,5 @@ export const Icons = {
   warning: AlertTriangle,
   download: Download,
   externalLink: ExternalLink,
+  ai: Sparkles,
 };

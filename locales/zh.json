@@ -9,13 +9,19 @@
     "projects": "项目",
     "aboutme": "关于我",
     "about_title1": "我是",
-    "about_title2": "马克",
-    "about_title3": "并且",
-    "about_title4": "我是开发者。",
+    "about_title2": "Endashaw Markos",
+    "about_title3": "一名",
+    "about_title4": "全栈软件工程师。",
+    "about_description": "我致力于构建高性能、可扩展且设计精美的数字产品。凭借在架构设计和用户体验方面的深厚功底，我将复杂的想法转化为流畅的解决方案。",
+    "expertise_microservices": "微服务",
+    "expertise_dotnet": ".NET 后端",
+    "expertise_nextjs": "Next.js 前端",
+    "expertise_ui": "UI 设计",
+    "expertise_system": "系统设计",
     "view_resume": "查看简历",
     "download_resume": "下载简历",
     "github": "GitHub",
-    "mark": "Mark"
+    "mark": "Endashaw Markos"
   },
   "theme": {
     "light": "浅色",

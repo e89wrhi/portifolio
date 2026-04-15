@@ -9,13 +9,19 @@
     "projects": "المشاريع",
     "aboutme": "معلومات عني",
     "about_title1": "أنا",
-    "about_title2": "مارك",
+    "about_title2": "إنداشاو ماركوس",
     "about_title3": "و",
-    "about_title4": "أنا مطوّر.",
+    "about_title4": "أنا مهندس برمجيات (Full-stack).",
+    "about_description": "أركز على بناء منتجات رقمية عالية الأداء وقابلة للتوسع ومصممة بشكل جميل. بفضل خبرتي القوية في كل من الهندسة المعمارية لمشاريع البرمجة وتجربة المستخدم، أقوم بتحويل الأفكار المعقدة إلى حلول سلسة.",
+    "expertise_microservices": "الخدمات المصغرة",
+    "expertise_dotnet": ".NET Backend",
+    "expertise_nextjs": "Next.js Frontend",
+    "expertise_ui": "تصاميم واجهة المستخدم",
+    "expertise_system": "تصميم الأنظمة",
     "view_resume": "السيرة الذاتية",
     "download_resume": "تحميل السيرة الذاتية",
     "github": "GitHub",
-    "mark": "Mark"
+    "mark": "Endashaw Markos"
   },
   "theme": {
     "light": "فاتح",

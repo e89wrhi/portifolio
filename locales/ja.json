@@ -9,13 +9,19 @@
     "projects": "プロジェクト",
     "aboutme": "私について",
     "about_title1": "私は",
-    "about_title2": "マーク",
-    "about_title3": "そして",
-    "about_title4": "私は開発者です。",
+    "about_title2": "エンダショー・マルコス",
+    "about_title3": "であり、",
+    "about_title4": "フルスタック・ソフトウェア・エンジニアです。",
+    "about_description": "私は、高性能でスケーラブル、かつ美しくデザインされたデジタル製品の構築に重点を置いています。アーキテクチャとユーザーエクスペリエンスの両方における強力な基盤を活かし、複雑なアイデアをシームレスなソリューションに変換します。",
+    "expertise_microservices": "マイクロサービス",
+    "expertise_dotnet": ".NETバックエンド",
+    "expertise_nextjs": "Next.jsフロントエンド",
+    "expertise_ui": "UIデザイン",
+    "expertise_system": "システム設計",
     "view_resume": "履歴書を見る",
     "download_resume": "履歴書をダウンロード",
     "github": "GitHub",
-    "mark": "Mark"
+    "mark": "Endashaw Markos"
   },
   "theme": {
     "light": "ライト",

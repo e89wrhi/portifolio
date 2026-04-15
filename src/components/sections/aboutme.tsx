@@ -32,23 +32,31 @@ export default function AboutMe() {
               </AvatarFallback>
             </Avatar>
           </span>
-          <span>{t('portifolio.about_title4')} </span>
+          <span> {t('portifolio.about_title4')} </span>
         </h1>
 
-        <p
-          className="align-middle inline-block max-w-2xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
-          style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
-        >
-          I specialize in building modern web and mobile apps using{' '}
-          <Icons.nextjs className="align-middle inline-block text-green-400 size-5" />{' '}
-          Next.js,{' '}
-          <Icons.web className="align-middle inline-block text-purple-400 size-5" />{' '}
-          .NET, and{' '}
-          <Icons.appdesign className="align-middle inline-block text-blue-400 size-5" />{' '}
-          React Native. Alongside development, I bring a design-driven approach
-          and offer consulting to help transform ideas into polished digital
-          solutions.
+        <p className="align-middle inline-block max-w-3xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8">
+          {t('portifolio.about_description')}
         </p>
+
+        <div className="grid grid-cols-1 gap-4 sm:grid-cols-2 lg:grid-cols-4 mt-10 w-full lg:max-w-none">
+          {[
+            { key: 'dotnet', icon: Icons.settings, color: 'text-purple-400' },
+            { key: 'nextjs', icon: Icons.nextjs, color: 'text-green-400' },
+            { key: 'ui', icon: Icons.webdesign, color: 'text-pink-400' },
+            { key: 'system', icon: Icons.logo, color: 'text-orange-400' },
+          ].map((item) => (
+            <div
+              key={item.key}
+              className="flex flex-col items-center gap-2 p-6 rounded-2xl bg-muted/50 border border-border/50 transition-all hover:bg-muted"
+            >
+              <item.icon className={`${item.color} size-8`} />
+              <span className="font-semibold text-sm">
+                {t(`portifolio.expertise_${item.key}`)}
+              </span>
+            </div>
+          ))}
+        </div>
       </div>
     </section>
   );
