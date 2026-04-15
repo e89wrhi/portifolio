@@ -14,7 +14,9 @@ export function ProjectCard({
 }) {
   return (
     <article
-      className={cn('flex flex-col items-center my-5 justify-center md:gap-6')}
+      className={cn(
+        'relative flex flex-col items-center my-5 justify-center md:gap-6',
+      )}
     >
       {data.image && (
         <div className="flex items-center">
@@ -40,7 +42,7 @@ export function ProjectCard({
           </p>
         )}
       </div>
-      <Link href={`project/${data.slug}`} className="absolute inset-0">
+      <Link href={`/project/${data.slug}`} className="absolute inset-0">
         <span className="sr-only">View Project</span>
       </Link>
     </article>
