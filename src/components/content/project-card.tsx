@@ -15,7 +15,7 @@ export function ProjectCard({
   return (
     <article
       className={cn(
-        'relative flex flex-col items-center my-5 justify-center md:gap-6',
+        'relative flex flex-col items-center my-5 justify-center md:gap-6'
       )}
     >
       {data.image && (

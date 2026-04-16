@@ -7,7 +7,14 @@ import { useTransition } from 'react';
 import TextareaAutosize from 'react-textarea-autosize';
 
 import { Button } from '@/components/ui/button';
-import { Form, FormControl, FormField, FormItem, FormLabel, FormMessage } from '@/components/ui/form';
+import {
+  Form,
+  FormControl,
+  FormField,
+  FormItem,
+  FormLabel,
+  FormMessage,
+} from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { submitContactFormAction } from '@/actions/contact';
@@ -36,7 +43,7 @@ export function ContactForm() {
   function onSubmit(data: z.infer<typeof FormSchema>) {
     startTransition(async () => {
       const response = await submitContactFormAction(data);
-      
+
       if (response.success) {
         form.reset();
         toast({
@@ -45,9 +52,10 @@ export function ContactForm() {
         });
       } else {
         toast({
-          type: "error",
+          type: 'error',
           title: 'Message failed',
-          description: response.error || 'Something went wrong. Please try again.',
+          description:
+            response.error || 'Something went wrong. Please try again.',
         });
       }
     });
@@ -64,7 +72,7 @@ export function ContactForm() {
             Contact for Business
           </h2>
           <p className="text-sm text-muted-foreground">
-            Send me a message and let's work together.
+            Send me a message and let&apos;s work together.
           </p>
         </div>
 
@@ -87,7 +95,7 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        
+
         <FormField
           control={form.control}
           name="message"
@@ -107,10 +115,10 @@ export function ContactForm() {
             </FormItem>
           )}
         />
-        
-        <Button 
-          type="submit" 
-          size="default" 
+
+        <Button
+          type="submit"
+          size="default"
           className="w-full rounded-lg"
           disabled={isPending}
         >
