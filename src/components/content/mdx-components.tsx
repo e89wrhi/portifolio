@@ -210,7 +210,7 @@ export function Mdx({ code, images }: MdxProps) {
 
   // eslint-disable-next-line @typescript-eslint/no-explicit-any
   const MDXImage = (props: any) => {
-    if (!images) return null;
+    if (!images || !props.src) return null;
     const blurDataURL = images.find(
       (image) => image.src === props.src
     )?.blurDataURL;

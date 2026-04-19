@@ -4,7 +4,7 @@ import createNextIntlPlugin from 'next-intl/plugin';
 import './env.mjs';
 
 const nextConfig: NextConfig = {
-  transpilePackages: ['react-tweet'],
+  transpilePackages: ['react-tweet', '@emotion/memoize'],
   reactStrictMode: true,
   images: {
     remotePatterns: [

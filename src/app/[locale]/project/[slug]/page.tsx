@@ -27,9 +27,9 @@ export default async function PostPage({ params }: ProjectPageProps) {
 
   const toc = await getTableOfContents(post.body.raw);
 
-  const [thumbnailBlurhash] = await Promise.all([
-    getBlurDataURL(post.image ?? ``),
-  ]);
+  const thumbnailBlurhash = post.image
+    ? await getBlurDataURL(post.image)
+    : placeholderBlurhash;
 
   return (
     <>
@@ -57,17 +57,19 @@ export default async function PostPage({ params }: ProjectPageProps) {
 
         <MaxWidthWrapper className="grid grid-cols-4 gap-10 pt-8 max-md:px-0">
           <div className="relative col-span-4 mb-10 flex flex-col space-y-8 border-y bg-background md:rounded-xl md:border lg:col-span-3">
-            <BlurImage
-              alt={post.title}
-              blurDataURL={thumbnailBlurhash ?? placeholderBlurhash}
-              className="aspect-[1200/630] border-b object-cover md:rounded-t-xl"
-              width={1200}
-              height={630}
-              priority
-              placeholder="blur"
-              src={post.image ?? ``}
-              sizes="(max-width: 768px) 770px, 1000px"
-            />
+            {post.image && (
+              <BlurImage
+                alt={post.title}
+                blurDataURL={thumbnailBlurhash ?? placeholderBlurhash}
+                className="aspect-[1200/630] border-b object-cover md:rounded-t-xl"
+                width={1200}
+                height={630}
+                priority
+                placeholder="blur"
+                src={post.image}
+                sizes="(max-width: 768px) 770px, 1000px"
+              />
+            )}
             <div className="px-[.8rem] pb-10 md:px-8">
               <Mdx code={post.body.code} images={[]} />
             </div>

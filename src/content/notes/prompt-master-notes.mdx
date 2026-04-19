@@ -1,0 +1,33 @@
+---
+title: PromptMaster Hub Architecture
+description: Behind the scenes of the high-performance prompt management hub.
+date: "2026-04-19"
+authors:
+  - mark
+categories:
+  - project-notes
+  - frontend
+  - web
+---
+
+# 🔍 PromptMaster Hub: Architectural Notes
+
+## What
+A professional web hub for discoverable and reusable AI templates. It features a high-fidelity interface with lightning-fast search and interactive editing capabilities.
+
+## Why
+Managing thousands of prompts requires more than just a folder of markdown files. PromptMaster Hub was created to make prompts searchable, editable, and shareable through a modern web interface.
+
+## How
+- **Search Engine**: Implemented a global Cmd+K interface for instant, fuzzy searching across the entire library.
+- **Interactive Editor**: A browser-based editor that allows users to fill in variables and preview prompt rendering in real-time.
+- **Monorepo Management**: Built using **Turborepo** to manage the shared logic between the prompt library and the web interface.
+- **Design**: Focused on "Developer Experience" using Lucide Icons and a dark-mode first aesthetic with Tailwind v4.
+
+## Challenges & Solutions
+- **Challenge**: Performance issues when rendering thousands of prompt cards.
+- **Solution**: Implemented virtualization for the search results and utilized Next.js static generation with incremental revalidation.
+
+## Next Steps
+- Community contribution layer allowing users to submit their own templates.
+- Direct "Copy to Clipboard" with variable injection.

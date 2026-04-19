@@ -1,0 +1,34 @@
+---
+title: AI-Net Architectural Notes
+description: Technical deep-dive into the AI-Net platform, exploring the "what, why, and how" behind its .NET and Next.js integration.
+date: "2026-04-19"
+authors:
+  - mark
+categories:
+  - project-notes
+  - ai
+  - dotnet
+---
+
+# 🚀 AI-Net: Architectural Notes
+
+## What
+AI-Net is a high-performance platform designed to showcase advanced AI capabilities—such as code generation, meeting summarization, and sentiment analysis—integrated into a unified, design-driven interface. It serves as a flagship demonstration of how enterprise-grade backend logic can meet modern frontend agility.
+
+## Why
+The project was born out of the need to bridge the gap between heavy-duty .NET backend ecosystems and fast-moving AI innovation. Most AI demos are Python-centric; AI-Net proves that **.NET 8** and **Microsoft Extensions AI** are equally capable of handling complex AI workflows while providing the robustness required for production environments.
+
+## How
+The system is built on a **Turborepo monorepo** architecture, split into:
+
+- **The Brain (Backend)**: Developed using .NET 8. It leverages Microsoft's unified AI extension libraries to maintain a consistent interface across different LLMs.
+- **The Interface (Frontend)**: Built with **Next.js 15 (App Router)** and **Tailwind CSS v4**. It uses Server-Sent Events (SSE) for real-time streaming of AI responses.
+- **The Connection**: A high-performance API layer that handles authentication, rate limiting, and analytics while proxying requests to AI providers.
+
+## Challenges & Solutions
+- **Challenge**: Handling long-running AI tasks without blocking the UI.
+- **Solution**: Implemented a robust streaming architecture using `IAsyncEnumerable` in .NET which maps directly to readable streams in Next.js.
+
+## Next Steps
+- Implement local LLM support via Ollama for privacy-focused modules.
+- Expand the "Learning Hub" with RAG (Retrieval-Augmented Generation) capabilities.

@@ -1,0 +1,34 @@
+---
+title: Leap AI SDK Implementation Notes
+description: Insights into the development of the provider-agnostic Leap AI SDK for .NET.
+date: "2026-04-19"
+authors:
+  - mark
+categories:
+  - project-notes
+  - dotnet
+  - sdk
+---
+
+# 📦 Leap AI SDK: Technical Notes
+
+## What
+The Leap AI SDK is a production-ready .NET toolkit that provides a unified, stateless service interface for interacting with various Large Language Models (LLMs). It allows developers to build AI-powered apps, chatbots, and autonomous agents without being locked into a single provider.
+
+## Why
+Provider lock-in is a significant risk in the fast-evolving AI landscape. Leap AI SDK was built to solve this by providing an abstraction layer that allows switching between OpenAI, Gemini, and Anthropic with zero changes to the core business logic.
+
+## How
+The SDK employs several key design patterns:
+- **Provider Pattern**: Simplifies configuration and initialization of different AI backends.
+- **Adapter Pattern**: Maps provider-specific API responses into a unified `LeapResponse` object.
+- **Reactive Streams**: Native support for `IAsyncEnumerable` ensures that developers can implement real-time UI updates (streaming) with ease.
+- **Strong Typing**: Forced JSON output mapping ensures AI responses are always converted into strongly-typed C# objects.
+
+## Challenges & Solutions
+- **Challenge**: Differing JSON schemas between AI providers.
+- **Solution**: Developed a sophisticated middleware layer that normalizes schemas before they reaching the application logic.
+
+## Next Steps
+- Add support for Tool Calling (Functions) across all providers.
+- Implement built-in retry logic with exponential backoff for high-availability scenarios.

@@ -1,0 +1,33 @@
+---
+title: MySaaS (Port) Development Notes
+description: Building the ultimate SaaS boilerplate with Next.js 15 and Tailwind CSS 4.
+date: "2026-04-19"
+authors:
+  - mark
+categories:
+  - project-notes
+  - saas
+  - web
+---
+
+# 🏗️ MySaaS (Port): Development Notes
+
+## What
+A cutting-edge SaaS boilerplate designed for rapid production. It includes full-stack features like authentication, payments, database management, and AI integration out of the box.
+
+## Why
+Building the foundation of a SaaS application repeatedly is time-consuming. `Port` was built to provide a "battle-tested" starting point that incorporates the latest tech (Next.js 15, Tailwind v4) so developers can focus on their unique product features.
+
+## How
+- **Frontend Stack**: Next.js 15 with React 19, utilizing Server Components for performance and Tailwind CSS v4 for modern styling.
+- **Backend Services**: A curated mix of Supabase (Database/Storage), Clerk (Auth), and Stripe (Payments).
+- **Animations**: Integrated Framer Motion and GSAP for a premium, high-fidelity user experience.
+- **Internationalization**: Full `next-intl` support for global scalability.
+
+## Challenges & Solutions
+- **Challenge**: Integrating Tailwind CSS v4 during its early release phase.
+- **Solution**: Carefully mapped the new CSS-variable based configuration to maintain compatibility with existing UI primitives like shadcn/ui.
+
+## Next Steps
+- Implement a plug-and-play Admin Dashboard for user management.
+- Add multi-tenant support for enterprise SaaS use cases.
