@@ -15,12 +15,12 @@ export default function PortifolioHeroLanding() {
         <div className="flex flex-col md:flex-row gap-12 items-start">
           {/* Left Side: Profile Image & Basic Info */}
           <div className="flex-shrink-0 relative group">
-            <div className="size-40 md:size-56 rounded-full overflow-hidden relative z-10">
+            <div className="size-40 md:size-56 overflow-hidden relative z-10">
               <Image
                 src="/logo.png"
                 alt="Portrait"
-                width={224}
-                height={224}
+                width={324}
+                height={324}
                 className="object-cover size-full grayscale transition-all duration-700"
               />
             </div>
