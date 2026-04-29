@@ -5,69 +5,74 @@ import { Icons } from '@/components/shared/icons';
 import { Button } from '@/components/ui/button';
 import Link from 'next/link';
 
-export default function CFASection() {
-  return (
-    <section className="relative overflow-hidden py-32 lg:py-48">
-      {/* Minimalistic Background Pattern / Glow */}
-      <div className="absolute inset-x-0 top-0 h-px" />
-      <div className="pointer-events-none absolute left-1/2 top-1/2 -z-10 aspect-square w-[600px] -translate-x-1/2 -translate-y-1/2 rounded-full bg-gray-100/50 dark:bg-gray-900/50 blur-[100px]" />
+import { useTranslations } from 'next-intl';
 
+import { siteConfig } from '@/config/site';
+
+export default function CFASection() {
+  const t = useTranslations();
+
+  return (
+    <section className="relative overflow-hidden py-6">
       <div className="container relative z-10 mx-auto flex max-w-4xl flex-col items-center text-center px-4">
-        {/* Animated Icon Container */}
+        {/* Badge */}
         <motion.div
-          initial={{ opacity: 0, scale: 0.9, y: 10 }}
-          whileInView={{ opacity: 1, scale: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, ease: 'easeOut' }}
-          className="mb-10 flex h-20 w-20 items-center justify-center rounded-2xl bg-gray-50 dark:bg-gray-900 ring-1 ring-gray-200 dark:ring-gray-800 shadow-sm"
+          initial={{ opacity: 0, scale: 0.9 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          className="mb-8 px-4 py-1.5 rounded-full bg-green-500/10 border border-green-500/20 text-green-600 dark:text-green-400 text-xs font-bold uppercase tracking-widest"
         >
-          <Icons.handshake className="h-8 w-8 text-gray-900 dark:text-gray-100" />
+          {t('portifolio.cta_badge')}
         </motion.div>
 
         {/* Heading */}
-        <motion.h1
+        <motion.h2
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, delay: 0.1, ease: 'easeOut' }}
-          className="font-extrabold text-5xl md:text-6xl lg:text-7xl tracking-tight mb-8 text-gray-900 dark:text-white leading-tight"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, ease: 'easeOut' }}
+          className="text-5xl md:text-7xl font-heading font-extrabold tracking-tight mb-8 leading-[1.1]"
         >
-          Tell me about your <br className="hidden sm:block" />
-          <span className="text-gray-400 dark:text-gray-500">next project</span>
-        </motion.h1>
+          {t('portifolio.cta_title')} <br />
+          <span className="text-muted-foreground italic font-light">
+            {t('portifolio.cta_subtitle')}
+          </span>
+        </motion.h2>
 
         {/* Paragraph */}
         <motion.p
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, delay: 0.2, ease: 'easeOut' }}
-          className="max-w-2xl text-lg md:text-xl text-gray-600 dark:text-gray-400 mb-12"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.1, ease: 'easeOut' }}
+          className="max-w-xl text-xl text-muted-foreground mb-12 leading-relaxed"
         >
-          Ready to bring your vision to life? Let&apos;s connect and explore how
-          we can turn your ideas into reality.
+          {t('portifolio.cta_description')}
         </motion.p>
 
         {/* CTA Buttons */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           whileInView={{ opacity: 1, y: 0 }}
-          viewport={{ once: true, margin: '-50px' }}
-          transition={{ duration: 0.5, delay: 0.3, ease: 'easeOut' }}
-          className="flex flex-col sm:flex-row items-center justify-center gap-4 w-full sm:w-auto"
+          viewport={{ once: true }}
+          transition={{ duration: 0.6, delay: 0.2, ease: 'easeOut' }}
+          className="flex flex-col sm:flex-row items-center justify-center gap-6 w-full sm:w-auto"
         >
-          <Link href="mailto:hello@example.com" className="w-full sm:w-auto">
+          <Link
+            href={`mailto:${siteConfig.mailSupport}`}
+            className="w-full sm:w-auto overflow-hidden rounded-full"
+          >
             <Button
               size="lg"
-              className="w-full rounded-full px-8 h-14 text-base font-medium shadow-sm transition-all hover:-translate-y-0.5"
+              className="group w-full rounded-full px-12 h-16 text-lg font-bold shadow-2xl shadow-green-500/20 transition-all hover:scale-105 active:scale-95"
             >
-              <Icons.mail className="mr-2 h-5 w-5" />
-              Email Me
+              <Icons.mail className="mr-3 h-5 w-5 transition-transform group-hover:-rotate-12" />
+              {t('portifolio.get_in_touch')}
             </Button>
           </Link>
 
           <Link
-            href="https://wa.me/something"
+            href="#"
             target="_blank"
             rel="noreferrer"
             className="w-full sm:w-auto"
@@ -75,10 +80,10 @@ export default function CFASection() {
             <Button
               variant="outline"
               size="lg"
-              className="w-full rounded-full px-8 h-14 text-base font-medium border-gray-200 dark:border-gray-800 bg-transparent transition-all hover:-translate-y-0.5 hover:bg-gray-50 dark:hover:bg-gray-900"
+              className="w-full rounded-full px-12 h-16 text-lg font-bold border-border bg-background/50 backdrop-blur-sm transition-all hover:bg-neutral-50 dark:hover:bg-neutral-900"
             >
-              <Icons.message className="mr-2 h-5 w-5" />
-              WhatsApp
+              <Icons.message className="mr-3 h-5 w-5 text-green-500" />
+              {t('portifolio.whatsapp')}
             </Button>
           </Link>
         </motion.div>

@@ -219,24 +219,31 @@ const logos = [
 
 export default function ProtifolioPowered() {
   return (
-    <section className="py-14 text-muted-foreground">
+    <section className="py-20 bg-neutral-50/50 dark:bg-neutral-900/20 border-y border-border/50">
       <MaxWidthWrapper>
-        <h2 className="text-center text-sm font-semibold uppercase">
-          WORKED With
-        </h2>
+        <div className="flex flex-col items-center gap-12">
+          <div className="flex flex-col items-center text-center space-y-2">
+            <h2 className="text-xs font-bold uppercase tracking-[0.3em] text-green-500">
+              Technical Stack
+            </h2>
+            <p className="text-2xl font-bold tracking-tight text-foreground/80">
+              Tools & Technologies I use to build
+            </p>
+          </div>
 
-        <div className="mt-10 grid grid-cols-2 place-items-center gap-8 md:grid-cols-4 lg:grid-cols-5">
-          {logos.map((logo) => (
-            <Link
-              target="_blank"
-              key={logo.title}
-              href={logo.href}
-              aria-label={logo.title}
-              className="duration-250 grayscale transition hover:text-foreground hover:grayscale-0"
-            >
-              {logo.icon}
-            </Link>
-          ))}
+          <div className="flex flex-wrap justify-center gap-x-12 gap-y-10 opacity-70">
+            {logos.map((logo) => (
+              <Link
+                target="_blank"
+                key={logo.title}
+                href={logo.href}
+                aria-label={logo.title}
+                className="duration-300 grayscale transition-all hover:grayscale-0 hover:scale-110 hover:text-foreground"
+              >
+                {logo.icon}
+              </Link>
+            ))}
+          </div>
         </div>
       </MaxWidthWrapper>
     </section>

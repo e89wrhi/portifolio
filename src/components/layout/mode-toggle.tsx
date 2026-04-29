@@ -27,7 +27,7 @@ export function ModeToggle() {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="start"
-        className="bg-gray-100 dark:bg-gray-900 border-none rounded-xl 
+        className="bg-neutral-100 dark:bg-neutral-900 border-none rounded-xl 
         backdrop-blur-xl m-4"
       >
         <DropdownMenuItem

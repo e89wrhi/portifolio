@@ -1,8 +1,8 @@
 import Link from 'next/link';
 import { Project } from '.contentlayer/generated';
-
 import { cn, formatDate, placeholderBlurhash } from '@/lib/utils';
 import BlurImage from '@/components/shared/blur-image';
+import { useTranslations } from 'next-intl';
 
 export function ProjectCard({
   data,
@@ -12,6 +12,8 @@ export function ProjectCard({
   };
   priority?: boolean;
 }) {
+  const t = useTranslations();
+
   return (
     <article
       className={cn(
@@ -43,7 +45,7 @@ export function ProjectCard({
         )}
       </div>
       <Link href={`/project/${data.slug}`} className="absolute inset-0">
-        <span className="sr-only">View Project</span>
+        <span className="sr-only">{t('portifolio.view_project')}</span>
       </Link>
     </article>
   );

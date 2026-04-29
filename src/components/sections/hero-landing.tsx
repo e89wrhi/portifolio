@@ -1,131 +1,90 @@
 'use client';
 
 import Link from 'next/link';
-//import { env } from '@/../env.mjs';
-import { cn } from '@/lib/utils';
-import { buttonVariants } from '@/components/ui/button';
+import Image from 'next/image';
 import { Icons } from '@/components/shared/icons';
-//import { siteConfig } from '@/config/site';
-import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { useTranslations, useLocale } from 'next-intl';
 
 export default function PortifolioHeroLanding() {
   const t = useTranslations();
   const locale = useLocale();
-  /*const { stargazers_count: stars } = await fetch(
-    'https://api.github.com/repos/mickasmt/next-saas-stripe-starter',
-    {
-      ...(env.GITHUB_OAUTH_TOKEN && {
-        headers: {
-          Authorization: `Bearer ${process.env.GITHUB_OAUTH_TOKEN}`,
-          'Content-Type': 'application/json',
-        },
-      }),
-      // data will revalidate every hour
-      next: { revalidate: 3600 },
-    }
-  )
-    .then((res) => res.json())
-    .catch((e) => console.log(e));
-*/
+
   return (
-    <section className="space-y-6 py-12 sm:py-20 lg:py-20">
-      <div className="container flex max-w-5xl flex-col items-center gap-5 text-center">
-        <Avatar className="h-30 w-30 md:h-40 md:w-40 bg-gray-100 dark:bg-gray-900">
-          <AvatarImage
-            alt="Picture"
-            height={200}
-            width={200}
-            src="/_avatars/a9.png"
-            referrerPolicy="no-referrer"
-          />
-          <AvatarFallback>
-            <span className="sr-only">A</span>
-            <Icons.user className="size-11" />
-          </AvatarFallback>
-        </Avatar>
-        <h1 className="mx-10 text-balance font-urban text-4xl font-extrabold tracking-tight sm:text-5xl md:text-6xl lg:text-[66px]">
-          {t('portifolio.title1')}{' '}
-          <span className="text-gradient_green-yellow font-extrabold">
-            {t('portifolio.title2')}
-          </span>
-        </h1>
+    <section className="relative pt-32 pb-20 md:pt-48 md:pb-32">
+      <div className="container max-w-5xl">
+        <div className="flex flex-col md:flex-row gap-12 items-start">
+          {/* Left Side: Profile Image & Basic Info */}
+          <div className="flex-shrink-0 relative group">
+            <div className="size-40 md:size-56 rounded-full overflow-hidden relative z-10">
+              <Image
+                src="/logo.png"
+                alt="Portrait"
+                width={224}
+                height={224}
+                className="object-cover size-full grayscale transition-all duration-700"
+              />
+            </div>
+          </div>
 
-        <p
-          className="max-w-2xl text-balance leading-normal text-muted-foreground sm:text-xl sm:leading-8"
-          style={{ animationDelay: '0.35s', animationFillMode: 'forwards' }}
-        >
-          {t('portifolio.subtitle')}
-        </p>
+          {/* Right Side: Content */}
+          <div className="flex-1 space-y-10 animate-in fade-in slide-in-from-right-10 duration-1000 fill-mode-forwards">
+            <div className="space-y-6">
+              <h1 className="text-5xl md:text-7xl lg:text-8xl font-heading font-extrabold tracking-tighter leading-[0.9]">
+                {t('portifolio.about_title1')}{' '}
+                <span className="text-green-500">
+                  {t('portifolio.about_title2')}
+                </span>
+                <br />
+                <span className="text-muted-foreground font-light text-4xl md:text-6xl lg:text-7xl">
+                  {t('portifolio.about_title3')}{' '}
+                  <span className="text-foreground italic">
+                    {t('portifolio.about_title4')}
+                  </span>
+                </span>
+              </h1>
+              <div className="max-w-2xl">
+                <p className="text-xl md:text-2xl text-muted-foreground leading-relaxed font-medium">
+                  {t('portifolio.about_description')}
+                </p>
+              </div>
+            </div>
 
-        <div
-          className="flex justify-center space-x-2 md:space-x-4"
-          style={{ animationDelay: '0.4s', animationFillMode: 'forwards' }}
-        >
-          <Link
-            href="https://x.com/nolimitprima"
-            target="_blank"
-            className={cn(buttonVariants({ size: 'lg' }), 'gap-2 rounded-full')}
-          >
-            <Icons.twitter className="size-4" />
-            <span>{t('portifolio.twitter')}</span>
-          </Link>
-          <Link
-            href="https://github.com/e89wrhi"
-            target="_blank"
-            className={cn(
-              buttonVariants({
-                variant: 'secondary',
-                size: 'lg',
-              }),
-              'px-5 rounded-full'
-            )}
-          >
-            <Icons.gitHub className="mr-2 size-4" />
-            <p>{t('portifolio.github')}</p>
-          </Link>
-          <Link
-            href="https://www.linkedin.com/in/endashaw-markos-15b240231/"
-            target="_blank"
-            className={cn(
-              buttonVariants({
-                variant: 'secondary',
-                size: 'lg',
-              }),
-              'px-5 rounded-full'
-            )}
-          >
-            <Icons.linkedin className="mr-2 size-4" />
-            <p>{t('portifolio.linkedin')}</p>
-          </Link>
-        </div>
+            {/* Social Links & Action */}
+            <div className="flex flex-wrap items-center gap-8">
+              <div className="flex items-center gap-5 border-r border-border/50 pr-8">
+                <Link
+                  href="https://github.com/e89wrhi"
+                  target="_blank"
+                  className="text-muted-foreground hover:text-foreground transition-all hover:scale-110"
+                >
+                  <Icons.gitHub className="size-7" />
+                </Link>
+                <Link
+                  href="https://www.linkedin.com/in/endashaw-markos-15b240231/"
+                  target="_blank"
+                  className="text-muted-foreground hover:text-foreground transition-all hover:scale-110"
+                >
+                  <Icons.linkedin className="size-7" />
+                </Link>
+                <Link
+                  href="https://x.com/nolimitprima"
+                  target="_blank"
+                  className="text-muted-foreground hover:text-foreground transition-all hover:scale-110"
+                >
+                  <Icons.twitter className="size-7" />
+                </Link>
+              </div>
 
-        <div
-          className="flex justify-center space-x-2 md:space-x-4"
-          style={{ animationDelay: '0.45s', animationFillMode: 'forwards' }}
-        >
-          <Link
-            href={`/${locale}/resume`}
-            target="_blank"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'lg' }),
-              'px-5 rounded-full'
-            )}
-          >
-            <Icons.externalLink className="mr-2 size-4" />
-            <span>{t('portifolio.view_resume')}</span>
-          </Link>
-          <a
-            href="/Resume.pdf"
-            download="Resume.pdf"
-            className={cn(
-              buttonVariants({ variant: 'outline', size: 'lg' }),
-              'px-5 rounded-full'
-            )}
-          >
-            <Icons.download className="mr-2 size-4" />
-            <span>{t('portifolio.download_resume')}</span>
-          </a>
+              <Link
+                href={`/${locale}/resume`}
+                target="_blank"
+                className="group inline-flex items-center gap-3 font-bold text-sm tracking-[0.2em] text-foreground/80 hover:text-green-500 transition-all"
+              >
+                <span>{t('portifolio.view_resume')}</span>
+                <Icons.arrowRight className="size-5 transition-transform group-hover:translate-x-2" />
+              </Link>
+            </div>
+          </div>
         </div>
       </div>
     </section>

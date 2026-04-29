@@ -1,9 +1,16 @@
 import { Icons } from '@/components/shared/icons';
 import { buttonVariants } from '@/components/ui/button';
-import { cn } from '@/lib/utils';
+import { cn, constructMetadata } from '@/lib/utils';
 import { getTranslations } from 'next-intl/server';
-import { siteConfig } from '@/config/site';
 import Link from 'next/link';
+
+export async function generateMetadata() {
+  const t = await getTranslations('portifolio');
+  return constructMetadata({
+    title: `${t('resume_title')} – Mark`,
+    description: t('view_resume'),
+  });
+}
 
 export default async function ResumePage() {
   const t = await getTranslations('portifolio');
@@ -22,9 +29,8 @@ export default async function ResumePage() {
             <Icons.chevronLeft className="size-4" />
           </Link>
           <div className="flex items-center gap-2">
-            <Icons.logo className="size-8 text-primary" />
-            <h1 className="text-3xl font-bold tracking-tight">
-              {siteConfig.name}
+            <h1 className="text-3xl font-heading font-bold tracking-tight">
+              {t('resume_title')}
             </h1>
           </div>
         </div>
@@ -45,7 +51,7 @@ export default async function ResumePage() {
         <iframe
           src="/Resume.pdf"
           className="w-full h-full min-h-[800px]"
-          title="Resume"
+          title={t('resume_title')}
         />
       </div>
     </div>
