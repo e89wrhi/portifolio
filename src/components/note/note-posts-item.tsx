@@ -1,9 +1,11 @@
 import Link from 'next/link';
 import { Note } from '.contentlayer/generated';
-
 import { cn, formatDate } from '@/lib/utils';
+import { useTranslations } from 'next-intl';
 
 export function NoteCard({ data }: { data: Note }) {
+  const t = useTranslations();
+
   return (
     <article
       className={cn(
@@ -29,8 +31,8 @@ export function NoteCard({ data }: { data: Note }) {
           )}
         </div>
       </div>
-      <Link href={`note/${data.slug}`} className="absolute inset-0">
-        <span className="sr-only">View Note</span>
+      <Link href={`/note/${data.slug}`} className="absolute inset-0">
+        <span className="sr-only">{t('portifolio.view_note')}</span>
       </Link>
     </article>
   );

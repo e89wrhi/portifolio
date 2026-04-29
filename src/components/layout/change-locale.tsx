@@ -45,6 +45,14 @@ export function LocaleChange({ pathname }: { pathname: string }) {
         <DropdownMenuItem
           className="rounded-full px-2"
           onClick={() => {
+            switchTo('am');
+          }}
+        >
+          <span>አማርኛ</span>
+        </DropdownMenuItem>
+        <DropdownMenuItem
+          className="rounded-full px-2"
+          onClick={() => {
             switchTo('en');
           }}
         >
@@ -73,14 +81,6 @@ export function LocaleChange({ pathname }: { pathname: string }) {
           }}
         >
           <span>العربية</span>
-        </DropdownMenuItem>
-        <DropdownMenuItem
-          className="rounded-full px-2"
-          onClick={() => {
-            switchTo('am');
-          }}
-        >
-          <span>አማርኛ</span>
         </DropdownMenuItem>
       </DropdownMenuContent>
     </DropdownMenu>

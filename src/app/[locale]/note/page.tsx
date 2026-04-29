@@ -3,10 +3,15 @@ import { NotePosts } from '@/components/note/note-posts';
 
 import { constructMetadata, getBlurDataURL } from '@/lib/utils';
 
-export const metadata = constructMetadata({
-  title: 'Notes – Mark',
-  description: 'Latest notes from mark.',
-});
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata() {
+  const t = await getTranslations('portifolio');
+  return constructMetadata({
+    title: `${t('notes')} – Mark`,
+    description: t('notes_description'),
+  });
+}
 
 export default async function NotesPage() {
   const posts = await Promise.all(

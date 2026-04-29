@@ -4,10 +4,15 @@ import { constructMetadata, getBlurDataURL } from '@/lib/utils';
 import { ProjectPosts } from '@/components/content/project-posts';
 import { ProjectHeaderLayout } from '@/components/content/project-header-layout';
 
-export const metadata = constructMetadata({
-  title: 'Projects – Mark',
-  description: 'Latest projects from mark.',
-});
+import { getTranslations } from 'next-intl/server';
+
+export async function generateMetadata() {
+  const t = await getTranslations('portifolio');
+  return constructMetadata({
+    title: `${t('projects')} – Mark`,
+    description: t('projects_description'),
+  });
+}
 
 export default async function ProjectsPage() {
   const posts = await Promise.all(

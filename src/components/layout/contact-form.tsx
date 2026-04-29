@@ -19,6 +19,7 @@ import { Input } from '@/components/ui/input';
 import { toast } from '@/components/ui/use-toast';
 import { submitContactFormAction } from '@/actions/contact';
 import { Loader2 } from 'lucide-react';
+import { useTranslations } from 'next-intl';
 
 const FormSchema = z.object({
   email: z.string().email({
@@ -31,6 +32,7 @@ const FormSchema = z.object({
 
 export function ContactForm() {
   const [isPending, startTransition] = useTransition();
+  const t = useTranslations();
 
   const form = useForm<z.infer<typeof FormSchema>>({
     resolver: zodResolver(FormSchema),
@@ -47,13 +49,13 @@ export function ContactForm() {
       if (response.success) {
         form.reset();
         toast({
-          title: 'Message sent!',
-          description: "Thank you for reaching out. I'll get back to you soon.",
+          title: t('portifolio.contact_success_title'),
+          description: t('portifolio.contact_success_desc'),
         });
       } else {
         toast({
           type: 'error',
-          title: 'Message failed',
+          title: t('portifolio.contact_error_title'),
           description:
             response.error || 'Something went wrong. Please try again.',
         });
@@ -67,12 +69,12 @@ export function ContactForm() {
         onSubmit={form.handleSubmit(onSubmit)}
         className="w-full space-y-6 sm:max-w-md"
       >
-        <div className="space-y-1">
+        <div className="space-y-1 text-left">
           <h2 className="text-2xl font-bold tracking-tight">
-            Contact for Business
+            {t('portifolio.contact_business')}
           </h2>
           <p className="text-sm text-muted-foreground">
-            Send me a message and let&apos;s work together.
+            {t('portifolio.contact_subtitle')}
           </p>
         </div>
 
@@ -80,8 +82,8 @@ export function ContactForm() {
           control={form.control}
           name="email"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Email Address</FormLabel>
+            <FormItem className="text-left">
+              <FormLabel>{t('portifolio.email_label')}</FormLabel>
               <FormControl>
                 <Input
                   type="email"
@@ -100,13 +102,13 @@ export function ContactForm() {
           control={form.control}
           name="message"
           render={({ field }) => (
-            <FormItem>
-              <FormLabel>Your Message</FormLabel>
+            <FormItem className="text-left">
+              <FormLabel>{t('portifolio.message_label')}</FormLabel>
               <FormControl>
                 <TextareaAutosize
                   minRows={4}
                   className="flex w-full rounded-lg border border-input bg-transparent px-3 py-2 text-sm shadow-sm placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-1 focus-visible:ring-ring disabled:cursor-not-allowed disabled:opacity-50"
-                  placeholder="Tell me about your project..."
+                  placeholder={t('portifolio.message_placeholder')}
                   disabled={isPending}
                   {...field}
                 />
@@ -123,7 +125,7 @@ export function ContactForm() {
           disabled={isPending}
         >
           {isPending && <Loader2 className="mr-2 h-4 w-4 animate-spin" />}
-          Submit
+          {t('portifolio.submit')}
         </Button>
       </form>
     </Form>

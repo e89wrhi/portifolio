@@ -17,50 +17,47 @@ export function TabConfigs(): MarketingConfig {
   };
 }
 
-export const portifolioFeatures: FeatureLdg[] = [
-  {
-    title: 'AI & Machine Learning',
-    description:
-      'Developing AI-powered systems with ML.NET and LLM integration for chat, summarization, and predictive analytics.',
-    icon: 'consultation',
-    link: 'ai-ml',
-  },
-  {
-    title: 'Backend Architecture',
-    description:
-      'Designing scalable microservices and modular monoliths using DDD, CQRS, and Clean Architecture patterns in .NET.',
-    icon: 'backend',
-    link: 'backend',
-  },
-  {
-    title: 'Full-Stack Development',
-    description:
-      'Building end-to-end solutions combining robust .NET backends with high-performance React and Next.js frontends.',
-    icon: 'web',
-    link: 'fullstack',
-  },
-  {
-    title: 'Cross-Platform Mobile',
-    description:
-      'Crafting intuitive mobile experiences using .NET MAUI and Xamarin.Forms for logistics and social networking.',
-    icon: 'appdesign',
-    link: 'mobile',
-  },
-  {
-    title: 'Enterprise Tools',
-    description:
-      'Streamlining complex workflows with Turborepo monorepos, Stripe payment integration, and Agile/Scrum methodologies.',
-    icon: 'dashboard',
-    link: 'tools',
-  },
-  {
-    title: 'Content & Logistics',
-    description:
-      'Delivering specialized technical solutions for content-heavy platforms and AI-driven logistics ecosystems.',
-    icon: 'bookOpen',
-    link: 'domains',
-  },
-];
+export function PortifolioFeaturesData(): FeatureLdg[] {
+  const t = useTranslations();
+  return [
+    {
+      title: t('portifolio.feature_ai_title'),
+      description: t('portifolio.feature_ai_description'),
+      icon: 'consultation',
+      link: 'ai-ml',
+    },
+    {
+      title: t('portifolio.feature_backend_title'),
+      description: t('portifolio.feature_backend_description'),
+      icon: 'backend',
+      link: 'backend',
+    },
+    {
+      title: t('portifolio.feature_fullstack_title'),
+      description: t('portifolio.feature_fullstack_description'),
+      icon: 'web',
+      link: 'fullstack',
+    },
+    {
+      title: t('portifolio.feature_mobile_title'),
+      description: t('portifolio.feature_mobile_description'),
+      icon: 'appdesign',
+      link: 'mobile',
+    },
+    {
+      title: t('portifolio.feature_enterprise_title'),
+      description: t('portifolio.feature_enterprise_description'),
+      icon: 'dashboard',
+      link: 'tools',
+    },
+    {
+      title: t('portifolio.feature_logistics_title'),
+      description: t('portifolio.feature_logistics_description'),
+      icon: 'bookOpen',
+      link: 'domains',
+    },
+  ];
+}
 
 export const portifolioTestimonials: TestimonialType[] = [
   {
