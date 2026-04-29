@@ -7,10 +7,10 @@ export const siteConfig: SiteConfig = {
   name: 'Mark',
   description: 'A Personal blog or portifolio site.',
   url: env.NEXT_PUBLIC_APP_URL ?? '/',
-  ogImage: `/_logo/saas_logo2.png`,
+  ogImage: `/logo.png`,
   links: {
     twitter: 'https://twitter.com/mytwi',
-    github: 'https://github.com/mygit',
+    github: 'https://github.com/e89wrhi',
   },
-  mailSupport: 'support@saas-starter.com',
+  mailSupport: 'support@portifolio-mark.com',
 };

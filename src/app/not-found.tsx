@@ -1,6 +1,6 @@
 import Image from 'next/image';
 import Link from 'next/link';
-import img from 'public/_logo/saas_logo2.png';
+import img from 'public/logo.png';
 
 export default function NotFound() {
   return (
