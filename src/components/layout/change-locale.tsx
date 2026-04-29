@@ -39,7 +39,7 @@ export function LocaleChange({ pathname }: { pathname: string }) {
       </DropdownMenuTrigger>
       <DropdownMenuContent
         align="start"
-        className="bg-gray-100 dark:bg-gray-900 border-none 
+        className="bg-neutral-100 dark:bg-neutral-900 border-none 
         rounded-xl backdrop-blur-xl m-4 text-lg space-y-2"
       >
         <DropdownMenuItem

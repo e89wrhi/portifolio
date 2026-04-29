@@ -3,12 +3,11 @@
 import Link from 'next/link';
 import { useScroll } from '@/hooks/use-scroll';
 import MaxWidthWrapper from '@/components/shared/max-width-wrapper';
-import { NavOptions } from './nav-options';
 import { TabConfigs } from '@/config/landing';
 import { cn } from '@/lib/utils';
 import { useSelectedLayoutSegment } from 'next/navigation';
-import { Icons } from '@/components/shared/icons';
-import { siteConfig } from '@/config/site';
+import { LocaleChange } from './change-locale';
+import { ModeToggle } from './mode-toggle';
 
 interface NavBarProps {
   scroll?: boolean;
@@ -27,14 +26,9 @@ export function NavBar({ scroll = false }: NavBarProps) {
     >
       <MaxWidthWrapper className="flex h-19 items-center justify-between py-4">
         <div className="flex gap-6 md:gap-10">
-          <Link href="/" className="flex items-center space-x-2">
-            <Icons.logo className="size-6" />
-            <span className="font-urban text-xl font-bold">
-              {siteConfig.name}
-            </span>
-          </Link>
           <div className="flex items-center space-x-3">
-            <NavOptions />
+            <LocaleChange pathname="" />
+            <ModeToggle />
           </div>
         </div>
         {TabConfigs() && TabConfigs().mainNav.length > 0 ? (
